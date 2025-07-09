@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gemini Agency - Home</title>
+
+  <!-- style.css -->
+  <link href="../css/style.css" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- script.js -->
+  <script src="../js/script.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Locomotive Scroll -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css" />
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            'gemini-orange': '#fd7224',
+            'gemini-light-orange': '#ffaa5a',
+            'gemini-yellow': '#ffd25a',
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-slow': 'bounce 2s infinite',
+            'spin-slow': 'spin 8s linear infinite',
+            'fade-in-up': 'fadeInUp 0.8s ease-out',
+            'fade-in-left': 'fadeInLeft 0.8s ease-out',
+            'fade-in-right': 'fadeInRight 0.8s ease-out',
+            'scale-in': 'scaleIn 0.5s ease-out',
+            slide: 'slide 20s linear infinite',
+            counter: 'counter 2s ease-out',
+            'nav-slide': 'navSlide 0.3s ease-out',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<div data-scroll-container>
+<body class="bg-white text-gray-900 overflow-x-hidden font-poppins" data-scroll-container>
+
+  <!-- Overlay di caricamento -->
+  <div id="loading" class="loading-overlay">
+    <div class="loader-text-container">
+      <img id="loader-icon" src="../assets/creativita.svg" alt="Loading Icon" class="w-16 h-16 mx-auto mb-4" />
+      <div id="loader-text" class="text-white text-2xl font-bold text-center">CREATIVITÀ</div>
+    </div>
+  </div>
+
+  <!-- Floating Background Shapes -->
+  <div class="floating-shapes">
+    <div class="shape animate-float" style="top: 10%; left: 10%; animation-delay: 0s; position: absolute;" data-scroll data-scroll-speed="2">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+        <circle cx="30" cy="30" r="30" fill="#fd7224" />
+      </svg>
+    </div>
+    <div class="shape animate-float" style="top: 20%; right: 15%; animation-delay: 2s; position: absolute;" data-scroll data-scroll-speed="1">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="8" fill="#ffaa5a" />
+      </svg>
+    </div>
+    <div class="shape animate-float" style="bottom: 20%; left: 20%; animation-delay: 4s; position: absolute;" data-scroll data-scroll-speed="3">
+      <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+        <polygon points="25,5 45,40 5,40" fill="#ffd25a" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="navbar fixed top-0 w-full z-50" id="navbar">
+    <nav class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3" data-scroll data-scroll-speed="1">
+          <div class="relative group">
+            <svg width="50" height="50" viewBox="0 0 50 50" class="transition-transform duration-300 group-hover:scale-110">
+              <defs>
+                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#fd7224" />
+                  <stop offset="50%" style="stop-color:#ffaa5a" />
+                  <stop offset="100%" style="stop-color:#ffd25a" />
+                </linearGradient>
+              </defs>
+              <circle cx="25" cy="25" r="20" fill="url(#logoGradient)" opacity="0.2" />
+              <path d="M15 20 L25 15 L35 20 L35 30 L25 35 L15 30 Z" fill="url(#logoGradient)" />
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-white font-bold text-lg">G</span>
+            </div>
+          </div>
+          <h1 class="text-2xl font-bold gradient-text">GEMINI AGENCY</h1>
+        </div>
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="#home" class="nav-link active" data-nav="home">Home</a>
+          <a href="#servizi" class="nav-link" data-nav="servizi">Servizi</a>
+          <a href="#obiettivi" class="nav-link" data-nav="obiettivi">Obiettivi</a>
+          <a href="#chi-siamo" class="nav-link" data-nav="chi-siamo">Chi Siamo</a>
+          <a href="#contatti" class="nav-link" data-nav="contatti">Contatti</a>
+        </div>
+        <!-- CTA Button -->
+        <div class="hidden lg:block">
+          <button class="btn-primary text-white px-6 py-3 rounded-full font-semibold text-sm">Inizia Progetto</button>
+        </div>
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden">
+          <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white shadow-2xl lg:hidden" id="mobileMenu">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-8">
+          <h3 class="text-xl font-bold gradient-text">Menu</h3>
+          <button class="text-gray-500 hover:text-gemini-orange" id="closeMobile">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <nav class="space-y-6">
+          <a href="#home" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Home</a>
+          <a href="#servizi" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Servizi</a>
+          <a href="#obiettivi" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Obiettivi</a>
+          <a href="#chi-siamo" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Chi Siamo</a>
+          <a href="#contatti" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Contatti</a>
+          <button class="btn-primary text-white px-8 py-3 rounded-full font-semibold w-full mt-8">Inizia Progetto</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+<!-- Hero Section -->
+<section id="home" class="relative py-32 bg-gradient-to-br from-gray-50 to-white overflow-hidden min-h-screen flex items-center" data-scroll-section>
+  <div class="container mx-auto px-6 text-center relative z-10">
+    <div data-scroll data-scroll-speed="2" data-scroll-delay="0.1">
+      
+      <!-- Titolo principale diviso in più righe con gradienti animati -->
+      <h2 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        <span class="animated-gradient-text block">GEMINI,UN SUCCESSO DIGITALE GARANTITO</span>
+      </h2>
+
+      <!-- Sottotitolo -->
+      <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto font-medium" data-scroll data-scroll-speed="1">
+        Gemini è l'agenzia che accelera la tua ascesa online.<br>
+        Con un mix esplosivo di creatività e strategia, siamo pronti a portare il tuo brand al livello successivo.
+      </p>
+
+      <!-- Pulsanti -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-scroll data-scroll-speed="1" data-scroll-delay="0.3">
+        <button class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold">
+          <span class="flex items-center justify-center space-x-2">
+            <span>Inizia il tuo progetto</span>
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </span>
+        </button>
+
+        <button class="group border-2 border-gemini-orange text-gemini-orange hover:bg-gemini-orange hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+          <span class="flex items-center justify-center space-x-2">
+            <svg class="w-5 h-5 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Scopri di più</span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Statistics Section -->
+  <section class="py-20 bg-gradient-to-r from-gemini-orange to-gemini-yellow" data-scroll-section>
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12" data-scroll data-scroll-speed="1">
+        <h3 class="text-3xl font-bold text-white mb-4">Perché è fondamentale avere una strategia di vendita online?</h3>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 card-hover" data-scroll data-scroll-speed="2">
+          <div class="text-6xl font-bold text-white mb-4 counter" data-target="64">64%</div>
+          <div class="text-xl font-semibold text-white mb-2">Vendite Online</div>
+          <div class="text-white/80">% acquisti con interazione online</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 card-hover" data-scroll data-scroll-speed="2" data-scroll-delay="0.1">
+          <div class="text-6xl font-bold text-white mb-4 counter" data-target="79">79%</div>
+          <div class="text-xl font-semibold text-white mb-2">Mobile</div>
+          <div class="text-white/80">Vendite e-commerce da dispositivi mobili</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 card-hover" data-scroll data-scroll-speed="2" data-scroll-delay="0.2">
+          <div class="text-6xl font-bold text-white mb-4 counter" data-target="61">61%</div>
+          <div class="text-xl font-semibold text-white mb-2">Frequenza</div>
+          <div class="text-white/80">% di acquisti ricorrenti</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servizi Section -->
+  <section id="servizi" class="py-20 bg-white relative" data-scroll-section>
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16" data-scroll data-scroll-speed="1">
+        <h3 class="text-4xl md:text-5xl font-bold mb-4">
+          I NOSTRI <span class="gradient-text">SERVIZI</span>
+        </h3>
+      </div>
+
+      <!-- Marketing Profittevole -->
+      <div class="mb-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div data-scroll data-scroll-speed="1">
+            <h4 class="text-3xl font-bold mb-6 gradient-text">MARKETING PROFITTEVOLE E MIRATO AL TUO TARGET</h4>
+            <p class="text-xl text-gray-600 mb-6 font-medium">
+            Creiamo strategie complete su misura per far crescere il tuo brand nel mondo digitale. Dall’analisi al risultato, ogni passo è studiato per raggiungere i tuoi obiettivi.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <svg class="w-6 h-6 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700 font-medium">Migliorare l'Immagine del Brand</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg class="w-6 h-6 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700 font-medium">Aumentare le Vendite</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg class="w-6 h-6 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700 font-medium">Aumentare la visibilità online</span>
+              </div>
+            </div>
+          </div>
+          <div data-scroll data-scroll-speed="2">
+            <svg width="500" height="400" viewBox="0 0 500 400" class="w-full h-auto">
+              <defs>
+                <linearGradient id="marketingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#fd7224"/>
+                  <stop offset="100%" style="stop-color:#ffd25a"/>
+                </linearGradient>
+              </defs>
+              <rect x="50" y="50" width="400" height="300" rx="20" fill="url(#marketingGrad)" opacity="0.1"/>
+              <circle cx="150" cy="150" r="40" fill="url(#marketingGrad)" class="animate-pulse"/>
+              <circle cx="250" cy="200" r="35" fill="url(#marketingGrad)" class="animate-pulse" style="animation-delay:0.5s;"></circle>
+              <circle cx="350" cy="150" r="30" fill="url(#marketingGrad)" class="animate-pulse" style="animation-delay:1s;"></circle>
+              <path d="M150 150 L250 200 L350 150" stroke="url(#marketingGrad)" stroke-width="3" fill="none"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+<div class="mb-20 bg-gray-50 rounded-3xl p-12 max-w-7xl mx-auto" data-scroll data-scroll-speed="1">
+  <div class="text-center mb-12 px-4">
+    <h4 class="text-3xl font-bold mb-6 gradient-text">GESTIONE OTTIMIZZATA DEI TUOI CANALI SOCIAL</h4>
+    <p class="text-xl text-gray-600 mb-8 font-medium max-w-3xl mx-auto">
+      Cattura l'attenzione del tuo pubblico. Nel mondo digitale di oggi, la presenza sui social media non è solo un'opzione: è una <strong>necessità</strong>.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start px-4">
+    <!-- Colonna sinistra: testo e social -->
+    <div class="text-gray-600 text-lg font-medium">
+      <p class="mb-6">
+        La gestione efficace dei tuoi canali social ti permette di connetterti con il tuo pubblico, costruire una community fedele e posizionare il tuo brand come leader nel settore.
+      </p>
+      <p class="mb-8">
+        Con il nostro servizio di Social Media Management, creiamo una strategia personalizzata che rispecchia l'identità del tuo brand e raggiunge i tuoi obiettivi di business.
+      </p>
+
+      <div class="mb-8">
+        <h5 class="text-xl font-bold mb-4">Amplia le tue fonti di traffico dai vari canali di pubblicità</h5>
+        <div class="flex space-x-12 justify-start">
+          <!-- Facebook -->
+          <div class="text-center">
+            <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mb-2 transition-transform hover:scale-110">
+              <span class="text-white font-bold text-2xl">f</span>
+            </div>
+            <span class="text-sm font-semibold">FACEBOOK</span>
+          </div>
+
+          <!-- Instagram -->
+          <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-2 transition-transform hover:scale-110">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.3.6.5.3.8.7 1.1 1.1.3.4.5 1.1.6 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.6 2.3-.3.5-.7.8-1.1 1.1-.4.3-1.1.5-2.3.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.3-.6-.5-.3-.8-.7-1.1-1.1-.3-.4-.5-1.1-.6-2.3C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.6-2.3.3-.5.7-.8 1.1-1.1.4-.3 1.1-.5 2.3-.6C8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7 .1 5.7.2 4.6.5 3.8 1.1c-.8.6-1.5 1.3-2.1 2.1C.5 4.6.2 5.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 5c.1 1.3.4 2.4 1.1 3.2.6.8 1.3 1.5 2.1 2.1.8.6 1.9.9 3.2 1.1 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.4-.4 3.2-1.1.8-.6 1.5-1.3 2.1-2.1.6-.8.9-1.9 1.1-3.2.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.4-2.4-1.1-3.2-.6-.8-1.3-1.5-2.1-2.1C19.4.5 18.3.2 17 .1 15.7 0 15.3 0 12 0zM12 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.3a4.1 4.1 0 1 1 0-8.2 4.1 4.1 0 0 1 0 8.2zm6.4-10.6a1.4 1.4 0 1 0 0-2.8 1.4 1.4 0 0 0 0 2.8z"/>
+              </svg>
+            </div>
+            <span class="text-sm font-semibold">INSTAGRAM</span>
+          </div>
+
+          <!-- Google -->
+          <div class="text-center">
+            <div class="w-20 h-20 bg-red-500 rounded-full flex items-center justify-center mb-2 transition-transform hover:scale-110">
+              <span class="text-white font-bold text-2xl">G</span>
+            </div>
+            <span class="text-sm font-semibold">GOOGLE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Colonna destra: card allineate a destra -->
+    <div class="space-y-6 flex flex-col items-end">
+      <div class="bg-white p-6 rounded-xl shadow-lg card-hover max-w-md text-right">
+        <h6 class="font-bold text-lg mb-3">Ogni Post Conta, Ogni Interazione Vale</h6>
+        <p>
+          Strategia su misura per il tuo brand. Ogni brand ha una storia unica da raccontare e noi siamo qui per aiutarti a farlo nel modo migliore.
+        </p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg card-hover max-w-md text-right">
+        <h6 class="font-bold text-lg mb-3">Fatti Notare, Crea Connessioni</h6>
+        <p>
+          Contenuti creativi e coinvolgenti. I contenuti che creiamo non sono solo belli da vedere, ma sono studiati per generare coinvolgimento e costruire relazioni durature.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      <!-- Siti web Section -->
+      <div class="mb-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div data-scroll data-scroll-speed="1">
+            <h4 class="text-3xl font-bold mb-6 gradient-text">SITI WEB CHE CONQUISTANO E CONVERTONO</h4>
+            <p class="text-xl text-gray-600 mb-6 font-medium">
+              Non solo un sito, ma un ecosistema digitale. Negli ultimi anni, il mondo delle vendite online ha attirato un crescente interesse, portando a trasformazioni straordinarie e miglioramenti significativi nel business globale.
+            </p>
+            <p class="text-lg text-gray-600 mb-8 font-medium">
+              Noi di GEMINI ci siamo specializzati nella creazione di siti-web & eCommerce, accompagnando i nostri clienti dall'ideazione alla gestione continua e all'assistenza dei loro siti online.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <svg class="w-6 h-6 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4 -4"></path>
+                </svg>
+                <span class="text-gray-700 font-medium">Design responsive e mobile-first</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg class="w-6 h-6 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4 -4"></path>
+                </svg>
+                <span class="text-gray-700 font-medium">Ottimizzazione SEO avanzata</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg class="w-6 h-6 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4 -4"></path>
+                </svg>
+                <span class="text-gray-700 font-medium">Integrazione eCommerce completa</span>
+              </div>
+            </div>
+          </div>
+          <div data-scroll data-scroll-speed="2">
+            <div class="video-container">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center text-white cursor-pointer">
+                  <svg class="w-20 h-20 mx-auto mb-4 animate-pulse transition-transform hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"></path>
+                  </svg>
+                  <p class="text-lg font-semibold">Video Demo</p>
+                  <p class="text-sm opacity-80">Scopri come creiamo siti web vincenti</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Obiettivi Section -->
+  <section id="obiettivi" class="py-20 bg-gradient-to-br from-gray-50 to-white" data-scroll-section>
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16" data-scroll data-scroll-speed="1">
+        <h3 class="text-4xl md:text-5xl font-bold mb-4">
+          QUAL'È IL TUO <span class="gradient-text">OBIETTIVO</span>?
+        </h3>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <div class="text-center bg-white p-8 rounded-2xl shadow-lg card-hover" data-scroll data-scroll-speed="2">
+          <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 3v10a2 2 0 002 2h6a2 2 0 002-2V7H7z"></path>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold mb-2">Brand Awareness</h5>
+          <p class="text-gray-600 font-medium">Aumenta la riconoscibilità del tuo brand attraverso strategie di comunicazione efficaci.</p>
+        </div>
+        <div class="text-center bg-white p-8 rounded-2xl shadow-lg card-hover" data-scroll data-scroll-speed="2" data-scroll-delay="0.1">
+          <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-teal-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18"></path>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold mb-2">Lead Generation</h5>
+          <p class="text-gray-600 font-medium">Genera contatti qualificati e trasforma gli utenti in potenziali clienti.</p>
+        </div>
+        <div class="text-center bg-white p-8 rounded-2xl shadow-lg card-hover" data-scroll data-scroll-speed="2" data-scroll-delay="0.2">
+          <div class="w-20 h-20 bg-gradient-to-r from-red-500 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m4-4H8"></path>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold mb-2">Vendite Online</h5>
+          <p class="text-gray-600 font-medium">Ottimizza il tuo e-commerce per incrementare le vendite e il fatturato.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contatti Section -->
+  <section id="contatti" class="py-20 bg-white" data-scroll-section>
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16" data-scroll data-scroll-speed="1">
+        <h3 class="text-4xl md:text-5xl font-bold mb-4">
+          CONTATTACI <span class="gradient-text">ORA</span>
+        </h3>
+        <p class="text-lg text-gray-600 font-medium">
+          Siamo pronti a trasformare la tua presenza digitale. Scrivici per una consulenza gratuita.
+        </p>
+      </div>
+      <form action="#" method="POST" class="max-w-4xl mx-auto space-y-8" data-scroll data-scroll-speed="2">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <label for="nome" class="block text-gray-700 font-semibold mb-2">Nome</label>
+            <input type="text" id="nome" name="nome" required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gemini-orange" />
+          </div>
+          <div>
+            <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+            <input type="email" id="email" name="email" required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gemini-orange" />
+          </div>
+        </div>
+        <div>
+          <label for="messaggio" class="block text-gray-700 font-semibold mb-2">Messaggio</label>
+          <textarea id="messaggio" name="messaggio" rows="6" required
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gemini-orange"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn-primary px-12 py-4 rounded-full text-white font-bold text-lg transition hover:bg-gemini-yellow hover:text-gray-900">
+            Invia Messaggio
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contatti" class="bg-gray-900 text-white py-12 relative overflow-hidden" data-scroll-section>
+    <div class="absolute inset-0 opacity-10">
+      <svg width="100%" height="100%" viewBox="0 0 1000 300" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#fd7224"/>
+            <stop offset="100%" style="stop-color:#ffd25a"/>
+          </linearGradient>
+        </defs>
+        <path d="M0,100 Q250,50 500,100 T1000,100 L1000,300 L0,300 Z" fill="url(#footerGrad)"/>
+      </svg>
+    </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="grid md:grid-cols-4 gap-8">
+      
+      <!-- Logo and Description -->
+      <div data-scroll data-scroll-speed="1">
+        <div class="flex items-center space-x-3 mb-4">
+          <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="footerLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#fd7224"/>
+                <stop offset="100%" style="stop-color:#ffd25a"/>
+              </linearGradient>
+            </defs>
+            <circle cx="20" cy="20" r="16" fill="url(#footerLogoGrad)"/>
+            <path d="M12 16 L20 12 L28 16 L28 24 L20 28 L12 24 Z" fill="white"/>
+          </svg>
+          <h4 class="text-xl font-bold gradient-text">Gemini Agency</h4>
+        </div>
+        <p class="text-gray-400 leading-relaxed font-medium">
+          Il tuo partner per un successo digitale garantito. Creatività che comunica.
+        </p>
+      </div>
+
+      <!-- Servizi -->
+      <div data-scroll data-scroll-speed="1" data-scroll-delay="0.1">
+        <h5 class="text-lg font-semibold mb-4 text-gemini-orange">Servizi</h5>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Marketing Digitale</a></li>
+          <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Social Media</a></li>
+          <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Siti web</a></li>
+          <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Advertising</a></li>
+        </ul>
+      </div>
+
+      <!-- Azienda -->
+      <div data-scroll data-scroll-speed="1" data-scroll-delay="0.2">
+        <h5 class="text-lg font-semibold mb-4 text-gemini-orange">Azienda</h5>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Chi Siamo</a></li>
+          <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Portfolio</a></li>
+          <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Carriere</a></li>
+          <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Contatti -->
+      <div data-scroll data-scroll-speed="1" data-scroll-delay="0.3">
+        <h5 class="text-lg font-semibold mb-4 text-gemini-orange">Contatti</h5>
+        <ul class="space-y-3 text-gray-400">
+          <li class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8.89L4.26 10.15a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <span class="font-medium">info@geminiagency.it</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684 11.498 11.498 0 005.516 5.516 1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <span class="font-medium">+39 02 1234 5678</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0 4.243 4.243 0 11-5.657-5.657 8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span class="font-medium">Milano, Italia</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400" data-scroll data-scroll-speed="1">
+      <p class="font-medium">&copy; 2025 Gemini Agency. Tutti i diritti riservati. | Il Tuo Partner per un Successo Digitale Garantito</p>
+    </div>
+  </div>
+</div>
+</footer>

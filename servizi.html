@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gemini Agency - Servizi</title>
+
+  <!-- style.css -->
+  <link href="../css/style.css" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- script.js -->
+  <script src="../js/script.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Locomotive Scroll -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css" />
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            'gemini-orange': '#fd7224',
+            'gemini-light-orange': '#ffaa5a',
+            'gemini-yellow': '#ffd25a',
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-slow': 'bounce 2s infinite',
+            'spin-slow': 'spin 8s linear infinite',
+            'fade-in-up': 'fadeInUp 0.8s ease-out',
+            'fade-in-left': 'fadeInLeft 0.8s ease-out',
+            'fade-in-right': 'fadeInRight 0.8s ease-out',
+            'scale-in': 'scaleIn 0.5s ease-out',
+            slide: 'slide 20s linear infinite',
+            counter: 'counter 2s ease-out',
+            'nav-slide': 'navSlide 0.3s ease-out',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="#home" class="nav-link text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium">Home</a>
+      <a href="#servizi" class="nav-link text-gemini-orange font-semibold">Servizi</a>
+      <a href="#portfolio" class="nav-link text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium">Portfolio</a>
+      <a href="#chi-siamo" class="nav-link text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium">Chi Siamo</a>
+      <a href="#contatti" class="nav-link text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium">Contatti</a>
+      <button class="bg-gradient-to-r from-gemini-orange to-gemini-light-orange text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 font-medium">
+        Preventivo Gratuito
+      </button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-gray-700 hover:text-gemini-orange transition-colors" id="mobile-menu-btn">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white shadow-2xl z-50 p-6" id="mobile-menu">
+  <div class="flex justify-between items-center mb-8">
+    <h2 class="text-xl font-bold gradient-text">Menu</h2>
+    <button class="text-gray-700 hover:text-gemini-orange" id="close-menu-btn">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+  <nav class="space-y-6">
+    <a href="#home" class="block text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium text-lg">Home</a>
+    <a href="#servizi" class="block text-gemini-orange font-semibold text-lg">Servizi</a>
+    <a href="#portfolio" class="block text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium text-lg">Portfolio</a>
+    <a href="#chi-siamo" class="block text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium text-lg">Chi Siamo</a>
+    <a href="#contatti" class="block text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium text-lg">Contatti</a>
+    <button class="w-full bg-gradient-to-r from-gemini-orange to-gemini-light-orange text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium mt-6">
+      Preventivo Gratuito
+    </button>
+  </nav>
+</div>
+  <div class="grid lg:grid-cols-2 gap-12 mb-20">
+    <!-- E-commerce Websites -->
+    <div class="service-card bg-white p-10 rounded-3xl shadow-xl">
+      <div class="flex items-center mb-8">
+        <div class="w-20 h-20 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-3xl flex items-center justify-center mr-6">
+          <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+            <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold">E-commerce Websites</h3>
+      </div>
+      <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+        <strong>Gestiamo e realizziamo siti ecommerce per la vendita online</strong>
+      </p>
+      <p class="text-gray-600 mb-8 leading-relaxed">
+        La vendita online è oggetto di notevole interesse per molte realtà imprenditoriali. Per questo noi di GEMINI ci siamo specializzati nello studio e realizzazione di progetti e-commerce completi, prendendoci cura e seguendo passo a passo i nostri clienti.
+      </p>
+      <ul class="space-y-3 text-gray-600">
+        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Piattaforme personalizzate</li>
+        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Pagamenti sicuri integrati</li>
+        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Gestione inventario avanzata</li>
+        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Ottimizzazione per mobile</li>
+      </ul>
+    </div>
+
+    <!-- Company Website -->
+    <div class="service-card bg-white p-10 rounded-3xl shadow-xl">
+      <div class="flex items-center mb-8">
+        <div class="w-20 h-20 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-3xl flex items-center justify-center mr-6">
+          <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold">Company Website</h3>
+      </div>
+      <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+        <strong>Realizziamo siti web aziendali con plugin catalogo prodotti</strong>
+      </p>
+      <p class="text-gray-600 mb-8 leading-relaxed">
+        Ideiamo e creiamo siti internet per aziende produttrici. Il web come strumento di promozione e di lavoro. La necessità di avere il sito aziendale sempre aggiornato con tutto il catalogo prodotti digitale consultabile in pochi click.
+      </p>
+      <ul class="space-y-3 text-gray-600">
+        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Design professionale e moderno</li>
+        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Catalogo prodotti integrato</li>
+        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Sistema di gestione contenuti</li>
+        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> SEO ottimizzato</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Social Media Management -->
+  <div class="bg-white p-10 rounded-3xl shadow-xl mb-12">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="flex items-center mb-8">
+          <div class="w-20 h-20 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-3xl flex items-center justify-center mr-6">
+            <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+              <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold">Social Media Management</h3>
+        </div>
+        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+          <strong>Amplifichiamo la tua voce online con una strategia vincente</strong>
+        </p>
+        <p class="text-gray-600 mb-8 leading-relaxed">
+          La gestione dei social media è molto più che postare contenuti. È l'arte di costruire una presenza online forte e coerente, in grado di connettersi autenticamente con il tuo pubblico. Con Gemini, i tuoi social non saranno solo attivi, ma strategicamente orientati a crescere.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-6">
+        <div class="text-center p-6 bg-gray-50 rounded-2xl">
+          <div class="text-3xl font-bold gradient-text mb-2">100+</div>
+          <p class="text-gray-600">Campagne Gestite</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-2xl">
+          <div class="text-3xl font-bold gradient-text mb-2">500%</div>
+          <p class="text-gray-600">Crescita Media</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-2xl">
+          <div class="text-3xl font-bold gradient-text mb-2">24/7</div>
+          <p class="text-gray-600">Monitoraggio</p>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-2xl">
+          <div class="text-3xl font-bold gradient-text mb-2">50+</div>
+          <p class="text-gray-600">Brand Seguiti</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Campagne Marketing -->
+    <div class="service-card bg-white p-8 rounded-2xl shadow-lg">
+      <div class="w-16 h-16 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-2xl flex items-center justify-center mb-6">
+        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold mb-4">Campagne Marketing</h3>
+      <p class="text-lg font-semibold text-gray-700 mb-4">Una Pubblicità potente e degna della tua immagine</p>
+      <p class="text-gray-600 mb-6">
+        Dalla scelta del format alla gestione, fino alla misurazione e all'analisi delle statistiche, ideiamo e creiamo le campagne digitali dei nostri clienti con l'obiettivo di aumentare il loro business.
+      </p>
+      <ul class="space-y-2 text-gray-600">
+        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Google Ads & Facebook Ads</li>
+        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Analisi e ottimizzazione</li>
+        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Report dettagliati</li>
+      </ul>
+    </div>
+
+    <!-- Graphic Design -->
+    <div class="service-card bg-white p-8 rounded-2xl shadow-lg">
+      <div class="w-16 h-16 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-2xl flex items-center justify-center mb-6">
+        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold mb-4">Graphic Design</h3>
+      <p class="text-lg font-semibold text-gray-700 mb-4">Dai vita al tuo brand con un'identità visiva unica</p>
+      <p class="text-gray-600 mb-6">
+        Creiamo identità visive che rispecchiano l'essenza del tuo brand, dalla progettazione di loghi e materiali promozionali fino alla realizzazione di contenuti grafici per i social media.
+      </p>
+      <ul class="space-y-2 text-gray-600">
+        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Logo e Brand Identity</li>
+        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Materiali promozionali</li>
+        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Contenuti per social media</li>
+      </ul>
+    </div>
+
+    <!-- CRO -->
+    <div class="service-card bg-white p-8 rounded-2xl shadow-lg md:col-span-2 lg:col-span-1">
+      <div class="w-16 h-16 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-2xl flex items-center justify-center mb-6">
+        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+          <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold mb-4">Conversion Rate Optimization</h3>
+      <p class="text-lg font-semibold text-gray-700 mb-4">Massimizza il valore di ogni visita al tuo sito</p>
+      <p class="text-gray-600 mb-6">
+        Avere traffico sul tuo sito web è solo il primo passo; il vero successo arriva quando quei visitatori si trasformano in clienti. Con il nostro servizio di CRO, analizziamo il comportamento degli utenti e implementiamo strategie mirate per ottimizzare il tasso di conversione.
+      </p>
+      <ul class="space-y-2 text-gray-600">
+        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Analisi comportamento utenti</li>
+        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> A/B Testing</li>
+        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Ottimizzazione conversioni</li>
+      </ul>
+    </div>
+  </div>
+</div>
+  <div class="grid md:grid-cols-4 gap-8">
+    <div class="process-step text-center">
+      <div class="w-20 h-20 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-full flex items-center justify-center mx-auto mb-6">
+        <span class="text-white font-bold text-2xl">1</span>
+      </div>
+      <h3 class="text-xl font-bold mb-4">Analisi</h3>
+      <p class="text-gray-600">Studiamo il tuo business e i tuoi obiettivi per creare la strategia perfetta</p>
+    </div>
+
+    <div class="process-step text-center">
+      <div class="w-20 h-20 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-full flex items-center justify-center mx-auto mb-6">
+        <span class="text-white font-bold text-2xl">2</span>
+      </div>
+      <h3 class="text-xl font-bold mb-4">Progettazione</h3>
+      <p class="text-gray-600">Creiamo wireframe e mockup per visualizzare la soluzione ideale</p>
+    </div>
+
+    <div class="process-step text-center">
+      <div class="w-20 h-20 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-full flex items-center justify-center mx-auto mb-6">
+        <span class="text-white font-bold text-2xl">3</span>
+      </div>
+      <h3 class="text-xl font-bold mb-4">Sviluppo</h3>
+      <p class="text-gray-600">Realizziamo il progetto con le migliori tecnologie e standard qualitativi</p>
+    </div>
+
+    <div class="process-step text-center">
+      <div class="w-20 h-20 bg-gradient-to-r from-gemini-orange to-gemini-yellow rounded-full flex items-center justify-center mx-auto mb-6">
+        <span class="text-white font-bold text-2xl">4</span>
+      </div>
+      <h3 class="text-xl font-bold mb-4">Lancio & Supporto</h3>
+      <p class="text-gray-600">Lanciamo il progetto e ti supportiamo con manutenzione e aggiornamenti</p>
+    </div>
+  </div>
+</div>
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-xl font-bold mb-6">Link Rapidi</h4>
+      <ul class="space-y-3">
+        <li><a href="#home" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Home</a></li>
+        <li><a href="#servizi" class="text-gemini-orange">Servizi</a></li>
+        <li><a href="#portfolio" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Portfolio</a></li>
+        <li><a href="#contatti" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Contatti</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <h4 class="text-xl font-bold mb-6">Servizi</h4>
+      <ul class="space-y-3">
+        <li><a href="#" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">E-commerce</a></li>
+        <li><a href="#" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Company Website</a></li>
+        <li><a href="#" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Social Media</a></li>
+        <li><a href="#" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Marketing</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+    <p class="text-gray-400">
+      © 2024 Gemini Agency. Tutti i diritti riservati.
+    </p>
+  </div>
+</div>
