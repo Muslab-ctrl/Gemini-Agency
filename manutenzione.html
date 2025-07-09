@@ -1,0 +1,195 @@
+  <!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gemini Agency - Home</title>
+
+  <!-- style.css -->
+  <link href="/css/style.css" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- script.js -->
+  <script src="/js/script.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Locomotive Scroll -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css" />
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            'gemini-orange': '#fd7224',
+            'gemini-light-orange': '#ffaa5a',
+            'gemini-yellow': '#ffd25a',
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-slow': 'bounce 2s infinite',
+            'spin-slow': 'spin 8s linear infinite',
+            'fade-in-up': 'fadeInUp 0.8s ease-out',
+            'fade-in-left': 'fadeInLeft 0.8s ease-out',
+            'fade-in-right': 'fadeInRight 0.8s ease-out',
+            'scale-in': 'scaleIn 0.5s ease-out',
+            slide: 'slide 20s linear infinite',
+            counter: 'counter 2s ease-out',
+            'nav-slide': 'navSlide 0.3s ease-out',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body>
+  <!-- Logo -->
+  <div class="flex justify-center mb-12">
+    <div class="flex items-center space-x-4">
+      <div class="relative group">
+        <svg width="80" height="80" viewBox="0 0 80 80" class="transition-transform duration-300 group-hover:scale-110">
+          <defs>
+            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#fd7224" />
+              <stop offset="50%" style="stop-color:#ffaa5a" />
+              <stop offset="100%" style="stop-color:#ffd25a" />
+            </linearGradient>
+          </defs>
+          <circle cx="40" cy="40" r="35" fill="url(#logoGradient)" />
+          <text x="40" y="52" text-anchor="middle" fill="white" font-size="28" font-weight="bold">G</text>
+        </svg>
+      </div>
+      <div>
+        <h1 class="text-4xl font-bold gradient-text">Gemini</h1>
+        <p class="text-lg text-gray-600">Digital Agency</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Maintenance Icon -->
+  <div class="maintenance-icon mb-12">
+    <div class="relative flex justify-center items-center">
+      <!-- Animated Gears -->
+      <svg width="120" height="120" viewBox="0 0 120 120" class="gear-1">
+        <defs>
+          <linearGradient id="gearGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#fd7224" />
+            <stop offset="100%" style="stop-color:#ffaa5a" />
+          </linearGradient>
+        </defs>
+        <path d="M60 10L65 25L80 20L75 35L90 40L75 45L80 60L65 55L60 70L55 55L40 60L45 45L30 40L45 35L40 20L55 25Z" fill="url(#gearGradient1)" opacity="0.8"/>
+      </svg>
+      
+      <svg width="80" height="80" viewBox="0 0 80 80" class="gear-2 absolute" style="top: 20px; left: 80px;">
+        <defs>
+          <linearGradient id="gearGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffaa5a" />
+            <stop offset="100%" style="stop-color:#ffd25a" />
+          </linearGradient>
+        </defs>
+        <path d="M40 5L43 15L53 12L50 22L60 25L50 28L53 38L43 35L40 45L37 35L27 38L30 28L20 25L30 22L27 12L37 15Z" fill="url(#gearGradient2)" opacity="0.8"/>
+      </svg>
+    </div>
+  </div>
+
+    <!-- Main Message -->
+    <div class="mb-12 text-center">
+    <h2 class="text-5xl md:text-7xl font-bold mb-6 text-gray-800">
+        Sito in <span class="gradient-text">Manutenzione</span>
+    </h2>
+    <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+        Stiamo lavorando per migliorare la tua esperienza. Il sito tornerà online a breve!
+    </p>
+    </div>
+
+  <!-- Progress Bar -->
+  <div class="mb-12">
+    <div class="max-w-md mx-auto">
+      <div class="flex justify-between text-sm text-gray-600 mb-2">
+        <span>Progresso</span>
+        <span>Quasi pronto...</span>
+      </div>
+      <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+        <div class="progress-bar h-full bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-full"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Being Updated -->
+  <div class="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+    <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg">
+      <div class="w-16 h-16 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+          <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold mb-2 text-gray-800">Sicurezza</h3>
+      <p class="text-gray-600">Aggiornamenti di sicurezza per proteggere i tuoi dati</p>
+    </div>
+
+    <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg">
+      <div class="w-16 h-16 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+          <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold mb-2 text-gray-800">Performance</h3>
+      <p class="text-gray-600">Ottimizzazioni per un'esperienza più veloce</p>
+    </div>
+
+    <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg">
+      <div class="w-16 h-16 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold mb-2 text-gray-800">Nuove Funzioni</h3>
+      <p class="text-gray-600">Implementazione di nuove caratteristiche</p>
+    </div>
+  </div>
+
+  <!-- Contact Info -->
+  <div class="bg-white/70 backdrop-blur-sm p-8 rounded-3xl shadow-xl max-w-2xl mx-auto mb-12">
+    <h3 class="text-2xl font-bold mb-6 text-gray-800">Hai bisogno di aiuto?</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="flex items-center space-x-4">
+        <div class="w-12 h-12 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-full flex items-center justify-center">
+          <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-gray-800">Email</p>
+          <p class="text-gray-600">info@geminiagency.it</p>
+        </div>
+      </div>
+      
+      <div class="flex items-center space-x-4">
+        <div class="w-12 h-12 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-full flex items-center justify-center">
+          <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-gray-800">Telefono</p>
+          <p class="text-gray-600">+39 06 1234 5678</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<footer class="flex justify-center items-center py-4">
+  <p class="text-gray-500 text-sm text-center">
+    © 2025 Gemini Agency. Tutti i diritti riservati.
+  </p>
+</footer>
