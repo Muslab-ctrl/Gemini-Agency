@@ -79,7 +79,7 @@
   }
   .floating-shapes .shape {
     position: absolute;
-    opacity: 0.5;
+    opacity: 0.8;
     animation: float 6s ease-in-out infinite;
   }
   @keyframes float {
