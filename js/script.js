@@ -157,3 +157,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+  document.addEventListener("DOMContentLoaded", () => {
+    const shapes = document.querySelectorAll(".floating-shapes .shape");
+
+    shapes.forEach(shape => {
+      // Posizioni casuali top e left (0% a 90% per non uscire troppo)
+      const top = Math.random() * 90; 
+      const left = Math.random() * 90; 
+      shape.style.top = `${top}%`;
+      shape.style.left = `${left}%`;
+      shape.style.right = 'auto'; // rimuovi eventuale right
+
+      // Randomizza delay animazione floating tra 0 e 4 secondi
+      shape.style.animationDelay = `${Math.random() * 4}s`;
+    });
+  });
