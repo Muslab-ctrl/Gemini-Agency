@@ -72,15 +72,23 @@
 
 /* CONTENITORE PER SFONDO DI FORMA FLOTANTE */
 .floating-shapes {
-  position: absolute;
+  position: relative;    /* relativo al contenitore genitore */
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
+  height: 400px;         /* altezza fissa per visibilità */
+  overflow: visible;
+  pointer-events: none;  /* non blocca click */
+  z-index: 0;            /* dietro gli altri contenuti */
 }
 .floating-shapes .shape {
-  position: absolute;
+  position: absolute;    /* posizionate con top/left/right/bottom */
   opacity: 0.1;
+  animation-name: float;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-delay: var(--animation-delay, 0s);
+  will-change: transform;
 }
 
 /* CONTENITORE PER VIDEO CON SFONDO GRADIENTE */
@@ -270,4 +278,3 @@ html.has-scroll-dragging {
   color: transparent;                 /* fallback per sicurezza */
   animation: animated-gradient 6s ease-in-out infinite;
 }
-
