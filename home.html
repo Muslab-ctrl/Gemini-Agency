@@ -136,22 +136,41 @@
 
   <!-- Floating Background Shapes -->
   <div class="floating-shapes" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; z-index: 0;">
-    <div class="shape animate-float" data-scroll data-scroll-speed="2">
-      <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Cerchi -->
+    <div class="shape animate-float" style="top: 10%; left: 5%;" data-scroll data-scroll-speed="2">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
         <circle cx="30" cy="30" r="30" fill="#fd7224" />
       </svg>
     </div>
-    <div class="shape animate-float" data-scroll data-scroll-speed="1">
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="shape animate-float" style="bottom: 15%; right: 10%;" data-scroll data-scroll-speed="1">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <circle cx="15" cy="15" r="15" fill="#ffaa5a" />
+      </svg>
+    </div>
+
+    <!-- Rettangoli -->
+    <div class="shape animate-float" style="top: 25%; right: 5%;" data-scroll data-scroll-speed="1">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="8" fill="#ffaa5a" />
       </svg>
     </div>
-    <div class="shape animate-float" data-scroll data-scroll-speed="3">
-      <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="25,5 45,40 5,40" fill="#ffd25a" />
+    <div class="shape animate-float" style="bottom: 5%; left: 30%;" data-scroll data-scroll-speed="2">
+      <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+        <rect width="50" height="50" rx="10" fill="#ffd25a" />
       </svg>
     </div>
-    <!-- Puoi aggiungere altre forme se vuoi -->
+
+    <!-- Triangoli -->
+    <div class="shape animate-float" style="top: 45%; left: 20%;" data-scroll data-scroll-speed="3">
+      <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+        <polygon points="25,5 45,45 5,45" fill="#ffd25a" />
+      </svg>
+    </div>
+    <div class="shape animate-float" style="bottom: 10%; right: 20%;" data-scroll data-scroll-speed="2">
+      <svg width="40" height="40" viewBox="0 0 50 50" fill="none">
+        <polygon points="25,5 45,45 5,45" fill="#fd7224" />
+      </svg>
+    </div>
   </div>
 
   <div class="container mx-auto px-6 text-center relative z-10">
