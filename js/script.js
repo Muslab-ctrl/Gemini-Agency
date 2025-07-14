@@ -122,19 +122,21 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+    // Nuova variabile per animare i contatori una volta sola
+    let countersAnimated = false;
+
     scroll.on('scroll', () => {
+      if (countersAnimated) return;
+
       const counters = document.querySelectorAll('.counter');
-      counters.forEach(counter => {
+      for (let counter of counters) {
         const rect = counter.getBoundingClientRect();
-        if (
-          rect.top < window.innerHeight &&
-          rect.bottom > 0 &&
-          !counter.classList.contains('animated')
-        ) {
-          counter.classList.add('animated');
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          countersAnimated = true;
           animateCounters();
+          break;
         }
-      });
+      }
     });
 
     // Hover sulle card
