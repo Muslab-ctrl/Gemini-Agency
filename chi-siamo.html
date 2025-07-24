@@ -52,6 +52,82 @@
     };
 </script>
 </head>
+    <!-- Header -->
+  <header class="navbar fixed top-0 w-full z-50" id="navbar">
+    <nav class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <a href="home.html" class="flex items-center space-x-3" data-scroll data-scroll-speed="1">
+          <div class="relative group">
+            <svg width="50" height="50" viewBox="0 0 50 50" class="transition-transform duration-300 group-hover:scale-110">
+              <defs>
+                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#fd7224" />
+                  <stop offset="50%" style="stop-color:#ffaa5a" />
+                  <stop offset="100%" style="stop-color:#ffd25a" />
+                </linearGradient>
+              </defs>
+              <circle cx="25" cy="25" r="20" fill="url(#logoGradient)" opacity="0.2" />
+              <path d="M15 20 L25 15 L35 20 L35 30 L25 35 L15 30 Z" fill="url(#logoGradient)" />
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-white font-bold text-lg">G</span>
+            </div>
+          </div>
+          <h1 class="text-2xl font-bold gradient-text">GEMINI AGENCY</h1>
+        </a>
+
+  <!-- Desktop Navigation -->
+  <div class="hidden lg:flex items-center space-x-8">
+    <a href="home.html" class="nav-link active" data-nav="home">Home</a>
+    <a href="servizi.html" class="nav-link" data-nav="servizi">Servizi</a>
+    <a href="chi-siamo.html" class="nav-link" data-nav="chi-siamo">Chi Siamo</a>
+    <a href="contatti.html" class="nav-link" data-nav="contatti">Contatti</a>
+  </div>
+
+  <!-- CTA Button -->
+  <div class="hidden lg:block">
+    <a href="tel:+393202480724" 
+      class="btn-primary text-white px-6 py-3 rounded-full font-semibold text-sm inline-block text-center"
+      aria-label="Chiama +39 320 248 0724">
+      Chiamaci Subito!
+    </a>
+  </div>
+
+  <!-- Mobile Menu Button -->
+  <div class="lg:hidden">
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white shadow-2xl lg:hidden" id="mobileMenu">
+  <div class="p-6">
+    <div class="flex justify-between items-center mb-8">
+      <h3 class="text-xl font-bold gradient-text">Menu</h3>
+      <button class="text-gray-500 hover:text-gemini-orange" id="closeMobile">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+        </button>
+    </div>
+    
+    <nav class="space-y-6">
+      <a href="home.html" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Home</a>
+      <a href="servizi.html" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Servizi</a>
+      <a href="chi-siamo.html" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Chi Siamo</a>
+      <a href="contatti.html" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Contatti</a>
+      <a href="tel:+393202480724">
+        <button class="btn-primary text-white px-8 py-3 rounded-full font-semibold w-full mt-8">Chiamaci Subito!</button>
+      </a>
+    </nav>
+    </div>
+  </div>
+</header>
+  
 <!-- Footer -->
 <footer id="contatti" class="bg-gray-900 text-white py-12 relative overflow-hidden" data-scroll-section>
   <div class="absolute inset-0 opacity-10">
