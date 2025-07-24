@@ -140,102 +140,79 @@
 </header>
 
 <!-- Hero Section -->
-<section id="home" class="relative py-32 bg-gradient-to-br from-gray-50 to-white overflow-hidden min-h-screen flex items-center" data-scroll-section>
+<section id="home" class="relative py-20 md:py-32 bg-gradient-to-br from-gray-50 via-orange-50 to-yellow-50 overflow-hidden min-h-screen flex items-center">
+  
+      <!-- Floating Background Shapes -->
+    <div class="floating-shapes" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; z-index: 0;">
+        
+        <!-- Cerchi con effetti glow -->
+        <div class="shape animate-float glow-orange" style="top: 8%; left: 6%;">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <circle cx="30" cy="30" r="30" fill="#fd7224" opacity="0.8"/>
+            </svg>
+        </div>
+        <div class="shape animate-float-fast glow-yellow" style="top: 10%; right: 8%;">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                <circle cx="15" cy="15" r="15" fill="#ffaa5a" opacity="0.9"/>
+            </svg>
+        </div>
+        <div class="shape animate-float-slow glow-yellow" style="bottom: 12%; left: 12%;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="20" fill="#ffd25a" opacity="0.7"/>
+            </svg>
+        </div>
 
-<!-- Floating Background Shapes -->
-<div class="floating-shapes" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; z-index: 0;">
+        <!-- Rettangoli con animazioni diverse -->
+        <div class="shape animate-float-fast glow-orange" style="top: 25%; right: 10%;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <rect width="40" height="40" rx="8" fill="#ffaa5a" opacity="0.8"/>
+            </svg>
+        </div>
+        <div class="shape animate-float glow-yellow" style="bottom: 10%; right: 6%;">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                <rect width="50" height="50" rx="10" fill="#ffd25a" opacity="0.6"/>
+            </svg>
+        </div>
+        <div class="shape animate-float-slow glow-orange" style="top: 65%; left: 14%;">
+            <svg width="60" height="20" viewBox="0 0 60 20" fill="none">
+                <rect width="60" height="20" rx="4" fill="#fd7224" opacity="0.7"/>
+            </svg>
+        </div>
+        <div class="shape animate-float-fast glow-orange" style="bottom: 20%; right: 15%;">
+            <svg width="20" height="60" viewBox="0 0 20 60" fill="none">
+                <rect width="20" height="60" rx="6" fill="#ffaa5a" opacity="0.8"/>
+            </svg>
+        </div>
 
-  <!-- Cerchi -->
-  <div class="shape animate-float" style="top: 8%; left: 6%;">
-    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-      <circle cx="30" cy="30" r="30" fill="#fd7224" />
-    </svg>
-  </div>
-  <div class="shape animate-float" style="top: 10%; right: 8%;">
-    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-      <circle cx="15" cy="15" r="15" fill="#ffaa5a" />
-    </svg>
-  </div>
-  <div class="shape animate-float" style="bottom: 12%; left: 12%;">
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-      <circle cx="20" cy="20" r="20" fill="#ffd25a" />
-    </svg>
-  </div>
-  <div class="shape animate-float" style="top: 55%; right: 15%;">
-    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-      <circle cx="25" cy="25" r="25" fill="#ffb347" />
-    </svg>
-  </div>
-  <div class="shape animate-float" style="bottom: 30%; left: 80%;">
-    <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
-      <circle cx="12.5" cy="12.5" r="12.5" fill="#f9d56e" />
-    </svg>
-  </div>
+        <!-- Triangoli con rotazioni -->
+        <div class="shape animate-float glow-yellow" style="top: 40%; left: 18%;">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                <polygon points="25,5 45,45 5,45" fill="#ffd25a" opacity="0.7"/>
+            </svg>
+        </div>
+        <div class="shape animate-float-slow glow-orange" style="bottom: 18%; right: 18%;">
+            <svg width="40" height="40" viewBox="0 0 50 50" fill="none">
+                <polygon points="25,5 45,45 5,45" fill="#fd7224" opacity="0.8"/>
+            </svg>
+        </div>
+        <div class="shape animate-float-fast glow-orange" style="top: 20%; left: 45%;">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" style="transform: rotate(45deg);">
+                <polygon points="25,5 45,45 5,45" fill="#fd7224" opacity="0.6"/>
+            </svg>
+        </div>
 
-  <!-- Rettangoli -->
-  <div class="shape animate-float" style="top: 25%; right: 10%;">
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-      <rect width="40" height="40" rx="8" fill="#ffaa5a" />
-    </svg>
-  </div>
-  <div class="shape animate-float" style="bottom: 10%; right: 6%;">
-    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-      <rect width="50" height="50" rx="10" fill="#ffd25a" />
-    </svg>
-  </div>
-  <div class="shape animate-float" style="top: 65%; left: 14%;">
-    <svg width="60" height="20" viewBox="0 0 60 20" fill="none">
-      <rect width="60" height="20" rx="4" fill="#fd7224" />
-    </svg>
-  </div>
-  <div class="shape animate-float" style="bottom: 20%; right: 15%;">
-    <svg width="20" height="60" viewBox="0 0 20 60" fill="none">
-      <rect width="20" height="60" rx="6" fill="#ffaa5a" />
-    </svg>
-  </div>
-  <div class="shape animate-float" style="top: 80%; right: 20%;">
-    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-      <rect width="30" height="30" rx="5" fill="#ffcc66" />
-    </svg>
-  </div>
-
-  <!-- Triangoli -->
-  <div class="shape animate-float" style="top: 40%; left: 18%;">
-    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-      <polygon points="25,5 45,45 5,45" fill="#ffd25a" />
-    </svg>
-  </div>
-  <div class="shape animate-float" style="bottom: 18%; right: 18%;">
-    <svg width="40" height="40" viewBox="0 0 50 50" fill="none">
-      <polygon points="25,5 45,45 5,45" fill="#fd7224" />
-    </svg>
-  </div>
-  <div class="shape animate-float" style="top: 20%; left: 45%; transform: rotate(45deg);">
-    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-      <polygon points="25,5 45,45 5,45" fill="#fd7224" />
-    </svg>
-  </div>
-
-  <!-- Ellissi -->
-  <div class="shape animate-float" style="top: 35%; right: 40%;">
-    <svg width="60" height="30" viewBox="0 0 60 30" fill="none">
-      <ellipse cx="30" cy="15" rx="30" ry="15" fill="#ffc870" />
-    </svg>
-  </div>
-
-  <!-- Stelle -->
-  <div class="shape animate-float" style="bottom: 5%; left: 50%;">
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="#fd7224" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
-    </svg>
-  </div>
-
-  <div class="shape animate-float" style="top: 75%; right: 60%;">
-    <svg width="30" height="30" viewBox="0 0 24 24" fill="#ffaa5a" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
-    </svg>
-  </div>
-</div>
+        <!-- Forme aggiuntive per più dinamismo -->
+        <div class="shape animate-float-slow glow-yellow" style="top: 50%; right: 25%;">
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
+                <circle cx="12.5" cy="12.5" r="12.5" fill="#ffd25a" opacity="0.5"/>
+            </svg>
+        </div>
+        <div class="shape animate-float glow-orange" style="bottom: 35%; left: 35%;">
+            <svg width="35" height="35" viewBox="0 0 35 35" fill="none">
+                <rect width="35" height="35" rx="6" fill="#ffaa5a" opacity="0.6"/>
+            </svg>
+        </div>
+    </div>
 
   <div class="container mx-auto px-6 text-center relative z-10">
     <div data-scroll data-scroll-speed="2" data-scroll-delay="0.1">
