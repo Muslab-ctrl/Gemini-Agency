@@ -72,32 +72,20 @@
 
 /* CONTENITORE PER SFONDO DI FORMA FLOTANTE */
 .floating-shapes {
-  position: relative; /* da absolute a relative per contenere la griglia */
-  pointer-events: none;
-  z-index: 0;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
-.floating-shapes .shape {
-  position: relative; /* non più absolute */
-  opacity: 0.8;
-  animation: float 6s ease-in-out infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .floating-shapes .shape {
+    position: absolute;
+    opacity: 0.8;
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
 
 /* CONTENITORE PER VIDEO CON SFONDO GRADIENTE */
 .video-container {
