@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gemini Agency - Home</title>
+
+  <!-- style.css -->
+  <link href="/css/style.css" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- script.js -->
+  <script src="/js/script.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Locomotive Scroll -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css" />
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            'gemini-orange': '#fd7224',
+            'gemini-light-orange': '#ffaa5a',
+            'gemini-yellow': '#ffd25a',
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-slow': 'bounce 2s infinite',
+            'spin-slow': 'spin 8s linear infinite',
+            'fade-in-up': 'fadeInUp 0.8s ease-out',
+            'fade-in-left': 'fadeInLeft 0.8s ease-out',
+            'fade-in-right': 'fadeInRight 0.8s ease-out',
+            'scale-in': 'scaleIn 0.5s ease-out',
+            slide: 'slide 20s linear infinite',
+            counter: 'counter 2s ease-out',
+            'nav-slide': 'navSlide 0.3s ease-out',
+          },
+        },
+      },
+    };
+</script>
+</head>
+<!-- Footer -->
+<footer id="contatti" class="bg-gray-900 text-white py-12 relative overflow-hidden" data-scroll-section>
+  <div class="absolute inset-0 opacity-10">
+    <svg width="100%" height="100%" viewBox="0 0 1000 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#fd7224"/>
+          <stop offset="100%" style="stop-color:#ffd25a"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,100 Q250,50 500,100 T1000,100 L1000,300 L0,300 Z" fill="url(#footerGrad)"/>
+    </svg>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="grid md:grid-cols-4 gap-8">
+      
+      <!-- Logo and Description -->
+      <div data-scroll data-scroll-speed="1">
+        <div class="flex items-center space-x-3 mb-4">
+          <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="footerLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#fd7224"/>
+                <stop offset="100%" style="stop-color:#ffd25a"/>
+              </linearGradient>
+            </defs>
+            <circle cx="20" cy="20" r="16" fill="url(#footerLogoGrad)"/>
+            <path d="M12 16 L20 12 L28 16 L28 24 L20 28 L12 24 Z" fill="white"/>
+          </svg>
+          <h4 class="text-xl font-bold gradient-text">Gemini Agency</h4>
+        </div>
+        <p class="text-gray-400 leading-relaxed font-medium">
+          Il tuo partner per un successo digitale garantito. Creatività che comunica.
+        </p>
+      </div>
+
+      <!-- Servizi -->
+      <div data-scroll data-scroll-speed="1" data-scroll-delay="0.1">
+        <h5 class="text-lg font-semibold mb-4 text-gemini-orange">Servizi</h5>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="servizi.html#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Marketing Digitale</a></li>
+          <li><a href="servizi.html#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Social Media</a></li>
+          <li><a href="servizi.html#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Siti web</a></li>
+          <li><a href="servizi.html#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Advertising</a></li>
+        </ul>
+      </div>
+
+      <!-- Azienda -->
+      <div data-scroll data-scroll-speed="1" data-scroll-delay="0.2">
+        <h5 class="text-lg font-semibold mb-4 text-gemini-orange">Azienda</h5>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="chi-siamo.html" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Chi Siamo</a></li>
+          <li><a href="portfolio.html" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Portfolio</a></li>
+          <li><a href="servizi.html" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Servizi</a></li>
+          <li><a href="contattaci.html" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Contattaci</a></li>
+        </ul>
+      </div>
+
+      <!-- Contatti -->
+      <div data-scroll data-scroll-speed="1" data-scroll-delay="0.3">
+        <h5 class="text-lg font-semibold mb-4 text-gemini-orange">Contatti</h5>
+        <ul class="space-y-3 text-gray-400">
+          <li class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8.89L4.26 10.15a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <span class="font-medium">official@geminiagency.it</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684 11.498 11.498 0 005.516 5.516 1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <span class="font-medium">+39 320 248 0724</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0 4.243 4.243 0 11-5.657-5.657 8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span class="font-medium">Brescia, Italia</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400" data-scroll data-scroll-speed="1">
+      <p class="font-medium">&copy; 2025 Gemini Agency | Tutti i diritti riservati.</p>
+    </div>
+  </div>
+</footer>
