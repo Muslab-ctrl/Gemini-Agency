@@ -287,3 +287,4 @@ html.has-scroll-dragging {
   color: transparent;                 /* fallback per sicurezza */
   animation: animated-gradient 6s ease-in-out infinite;
 }
+html { scroll-behavior: smooth; }
