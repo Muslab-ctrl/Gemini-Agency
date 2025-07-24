@@ -151,6 +151,18 @@
 .mobile-menu {
   transform: translateX(100%);
   transition: transform 0.3s ease;
+  background-color: white;  /* sfondo bianco */
+  color: #333;              /* testo scuro */
+  /* aggiungi padding e larghezza se serve */
+  width: 100vw;             /* copre tutta la larghezza */
+  height: 100vh;            /* copre tutta l'altezza */
+  position: fixed;          /* per posizionarlo sopra tutto */
+  top: 0;
+  right: 0;
+  z-index: 1000;            /* sopra gli altri elementi */
+  overflow-y: auto;         /* scroll se contenuto lungo */
+  padding: 2rem 1.5rem;     /* margine interno */
+  box-sizing: border-box;
 }
 .mobile-menu.open {
   transform: translateX(0);
