@@ -2,66 +2,80 @@
 * {
   font-family: 'Poppins', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* ANIMAZIONI PERSONALIZZATE */
-
-/* Animazione movimento floating verticale */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
 }
 
-/* Animazione comparsa dal basso */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animazione comparsa da sinistra */
 @keyframes fadeInLeft {
   from { opacity: 0; transform: translateX(-30px); }
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* Animazione comparsa da destra */
 @keyframes fadeInRight {
   from { opacity: 0; transform: translateX(30px); }
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* Animazione comparsa con scala */
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(0.8); }
   to { opacity: 1; transform: scale(1); }
 }
 
-/* Animazione scorrimento orizzontale */
+@keyframes counter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes slide {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
 
-/* Animazione contatore con scala e opacità */
-@keyframes counter {
-  from { opacity: 0; transform: scale(0.5); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Animazione scorrimento verticale per navbar */
 @keyframes navSlide {
   from { transform: translateY(-100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* TESTO CON GRADIENTE COLORATO */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+@keyframes animated-gradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* TESTO CON GRADIENTE */
 .gradient-text {
-  background: linear-gradient(135deg, #fd7224 0%, #ffaa5a 50%, #ffd25a 100%);
+  background: linear-gradient(135deg, #fd7224, #ffaa5a, #ffd25a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent;
+}
+.animated-gradient-text {
+  background: linear-gradient(270deg, #fd7224, #ffaa5a, #ffd25a, #fd7224);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: animated-gradient 6s ease-in-out infinite;
 }
 
-/* STILE PER LE CARD CON EFFETTI AL PASSAGGIO DEL MOUSE */
+/* CARD HOVER */
 .card-hover {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -69,25 +83,29 @@
   transform: translateY(-15px) scale(1.02);
   box-shadow: 0 25px 50px rgba(253, 114, 36, 0.15);
 }
+.team-card {
+  transition: all 0.3s ease;
+}
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(253, 114, 36, 0.2);
+}
 
-/* CONTENITORE PER SFONDO DI FORMA FLOTANTE */
+/* FLOATING SHAPES */
 .floating-shapes {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .floating-shapes .shape {
-    position: absolute;
-    opacity: 0.8;
-    animation: float 6s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-  }
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+.floating-shapes .shape {
+  position: absolute;
+  opacity: 0.8;
+  animation: float 6s ease-in-out infinite;
+}
 
-/* CONTENITORE PER VIDEO CON SFONDO GRADIENTE */
+/* VIDEO CONTAINER */
 .video-container {
   position: relative;
   width: 100%;
@@ -98,7 +116,7 @@
   overflow: hidden;
 }
 
-/* SLIDER PARTNER CON ANIMAZIONE SCORRIMENTO */
+/* PARTNER SLIDER */
 .partners-slider {
   display: flex;
   animation: slide 30s linear infinite;
@@ -107,7 +125,7 @@
   animation-play-state: paused;
 }
 
-/* STILE NAVBAR CON SFONDO SFOCATO */
+/* NAVBAR */
 .navbar {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -120,7 +138,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* LINK NAVBAR CON EFFETTO SOTTOLINEATURA GRADIENTE */
+/* NAVBAR LINK */
 .nav-link {
   position: relative;
   font-weight: 500;
@@ -147,26 +165,24 @@
   transform: translateY(-2px);
 }
 
-/* MENU MOBILE: APERTURA E CHIUSURA */
+/* MENU MOBILE */
 .mobile-menu {
   transform: translateX(100%);
   transition: transform 0.3s ease;
-  background-color: white;  /* sfondo bianco */
-  color: #333;              /* testo scuro */
-  /* aggiungi padding e larghezza se serve */
-  width: 100vw;             /* copre tutta la larghezza */
-  height: 100vh;            /* copre tutta l'altezza */
-  position: fixed;          /* per posizionarlo sopra tutto */
+  background-color: white;
+  color: #333;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
   top: 0;
   right: 0;
-  z-index: 1000;            /* sopra gli altri elementi */
-  overflow-y: auto;         /* scroll se contenuto lungo */
-  padding: 2rem 1.5rem;     /* margine interno */
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 2rem 1.5rem;
   box-sizing: border-box;
 }
 .mobile-menu.open {
   transform: translateX(0);
-  z-index: 1000; /* o superiore */
 }
 .hamburger {
   cursor: pointer;
@@ -194,15 +210,13 @@
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* SISTEMA PER IL SCROLL FLUIDO (Locomotive Scroll) */
-html.has-scroll-smooth {
+/* SCROLL FLUIDO (Locomotive Scroll) */
+html.has-scroll-smooth,
+.has-scroll-smooth body {
   overflow: hidden;
 }
 html.has-scroll-dragging {
   user-select: none;
-}
-.has-scroll-smooth body {
-  overflow: hidden;
 }
 .has-scroll-smooth [data-scroll-container] {
   min-height: 100vh;
@@ -211,7 +225,7 @@ html.has-scroll-dragging {
   transition: transform 0.3s, opacity 0.3s;
 }
 
-/* STILE PER I BOTTONI PRINCIPALI */
+/* BOTTONI */
 .btn-primary {
   background: linear-gradient(135deg, #fd7224, #ffaa5a);
   transition: all 0.3s ease;
@@ -236,7 +250,7 @@ html.has-scroll-dragging {
   box-shadow: 0 15px 35px rgba(253, 114, 36, 0.4);
 }
 
-/* OVERLAY DI CARICAMENTO CON SFONDO GRADIENTE E CENTRATURA CONTENUTI */
+/* OVERLAY DI CARICAMENTO */
 .loading-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -249,42 +263,54 @@ html.has-scroll-dragging {
   flex-direction: column;
 }
 
-/* CONTENITORE TESTO CARICAMENTO CON DIMENSIONE MAGGIORATA E ANIMAZIONE PULSANTE */
+/* TESTO CARICAMENTO */
 .loader-text-container {
-  font-size: 3rem;            /* Dimensione più grande della scritta */
-  font-weight: 700;           /* Grassetto */
-  color: white;               /* Colore bianco */
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
   font-family: 'Poppins', sans-serif;
-  animation: pulse-slow 3s ease-in-out infinite; /* Animazione pulsante lenta */
+  animation: pulse-slow 3s ease-in-out infinite;
 }
-
-/* DEFINIZIONE ANIMAZIONE PULSE LENTA */
-@keyframes pulse-slow {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.05); }
-}
-
-/* CLASSE PER APPLICARE L'ANIMAZIONE PULSE LENTA */
 .animate-pulse-slow {
   animation: pulse-slow 3s ease-in-out infinite;
 }
 
-@keyframes animated-gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
+/* TIMELINE */
+.timeline-item {
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #fd7224, #ffaa5a, #ffd25a);
+  transform: translateX(-50%);
+  z-index: -1;
+}
+.timeline-item:last-child::before {
+  display: none;
+}
+@media (max-width: 768px) {
+  .timeline-item::before {
+    left: 20px;
   }
 }
 
-.animated-gradient-text {
-  background: linear-gradient(270deg, #fd7224, #ffaa5a, #ffd25a, #fd7224);
-  background-size: 600% 600%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;              /* fallback standard */
-  color: transparent;                 /* fallback per sicurezza */
-  animation: animated-gradient 6s ease-in-out infinite;
+/* VALUE CARD */
+.value-card {
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
 }
-html { scroll-behavior: smooth; }
+.value-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* STAT NUMBER */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
