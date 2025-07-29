@@ -11,50 +11,55 @@ html {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
 }
-
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeInLeft {
   from { opacity: 0; transform: translateX(-30px); }
   to { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes fadeInRight {
   from { opacity: 0; transform: translateX(30px); }
   to { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(0.8); }
   to { opacity: 1; transform: scale(1); }
 }
-
 @keyframes counter {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes slide {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
-
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 @keyframes navSlide {
   from { transform: translateY(-100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
-
 @keyframes pulse-slow {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.6; transform: scale(1.05); }
 }
-
 @keyframes animated-gradient {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 /* TESTO CON GRADIENTE */
@@ -91,6 +96,106 @@ html {
   box-shadow: 0 20px 40px rgba(253, 114, 36, 0.2);
 }
 
+/* SERVICE CARD */
+.service-card {
+  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(253, 114, 36, 0.1);
+}
+.service-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(253, 114, 36, 0.2);
+  border-color: rgba(253, 114, 36, 0.3);
+}
+.service-icon {
+  transition: all 0.3s ease;
+}
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* PRICING CARD */
+.pricing-card {
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(253, 114, 36, 0.15);
+}
+.pricing-card.featured {
+  transform: scale(1.05);
+  border: 2px solid #fd7224;
+}
+.pricing-card.featured:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+/* PROCESS STEPS */
+.process-step {
+  transition: all 0.3s ease;
+}
+.process-step:hover {
+  transform: translateY(-5px);
+}
+
+/* FAQ ACCORDION */
+.faq-item {
+  transition: all 0.3s ease;
+}
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  opacity: 0;
+}
+.faq-content.open {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* TAB SYSTEM */
+.tab-button {
+  transition: all 0.3s ease;
+}
+.tab-button.active {
+  background: linear-gradient(135deg, #fd7224, #ffaa5a);
+  color: white;
+  transform: translateY(-2px);
+}
+.tab-content {
+  display: none;
+  animation: fadeInUp 0.5s ease-out;
+}
+.tab-content.active {
+  display: block;
+}
+
+/* FEATURE LIST */
+.feature-item {
+  transition: all 0.3s ease;
+}
+.feature-item:hover {
+  transform: translateX(10px);
+  color: #fd7224;
+}
+
+/* CLIENT CAROUSEL */
+.carousel-track {
+  animation-play-state: running;
+}
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+.client-logo {
+  transition: all 0.3s ease;
+}
+.client-logo:hover {
+  transform: translateY(-5px);
+}
+
 /* FLOATING SHAPES */
 .floating-shapes {
   position: fixed;
@@ -102,7 +207,6 @@ html {
   z-index: -1;
   opacity: 1;
 }
-
 .floating-shapes .shape {
   position: absolute;
   border-radius: 50%;
@@ -214,7 +318,7 @@ html {
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* SCROLL FLUIDO (Locomotive Scroll) */
+/* SCROLL FLUIDO */
 html.has-scroll-smooth,
 .has-scroll-smooth body {
   overflow: hidden;
@@ -230,12 +334,14 @@ html.has-scroll-dragging {
 }
 
 /* BOTTONI */
-.btn-primary {
+.btn-primary,
+.cta-button {
   background: linear-gradient(135deg, #fd7224, #ffaa5a);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
+.cta-button::before,
 .btn-primary::before {
   content: '';
   position: absolute;
@@ -246,9 +352,11 @@ html.has-scroll-dragging {
   background: linear-gradient(90deg, transparent, rgba(255,255,255, 0.2), transparent);
   transition: left 0.5s;
 }
+.cta-button:hover::before,
 .btn-primary:hover::before {
   left: 100%;
 }
+.cta-button:hover,
 .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 35px rgba(253, 114, 36, 0.4);
