@@ -1,1 +1,989 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>I Nostri Servizi - Gemini Agency | Soluzioni Digital Complete</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            'gemini-orange': '#fd7224',
+            'gemini-light-orange': '#ffaa5a',
+            'gemini-yellow': '#ffd25a',
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            'fade-in-up': 'fadeInUp 0.8s ease-out',
+            'fade-in-left': 'fadeInLeft 0.8s ease-out',
+            'fade-in-right': 'fadeInRight 0.8s ease-out',
+            'scale-in': 'scaleIn 0.5s ease-out',
+            'slide-in': 'slideIn 0.6s ease-out',
+            'bounce-in': 'bounceIn 0.8s ease-out',
+            'scroll': 'scroll 30s linear infinite',
+          },
+        },
+      },
+    };
+  </script>
+</head>
 
+<body class="bg-white text-gray-900 overflow-x-hidden font-poppins">
+  <!-- Floating Background Shapes -->
+  <div class="floating-shapes">
+    <div class="absolute animate-float" style="top: 10%; left: 10%; animation-delay: 0s;">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none" class="opacity-10">
+        <circle cx="30" cy="30" r="30" fill="#fd7224" />
+      </svg>
+    </div>
+    <div class="absolute animate-float" style="top: 30%; right: 15%; animation-delay: 2s;">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" class="opacity-10">
+        <rect width="40" height="40" rx="8" fill="#ffaa5a" />
+      </svg>
+    </div>
+    <div class="absolute animate-float" style="bottom: 20%; left: 20%; animation-delay: 4s;">
+      <svg width="50" height="50" viewBox="0 0 50 50" fill="none" class="opacity-10">
+        <polygon points="25,5 45,40 5,40" fill="#ffd25a" />
+      </svg>
+    </div>
+    <div class="absolute animate-float" style="top: 60%; right: 25%; animation-delay: 1s;">
+      <svg width="35" height="35" viewBox="0 0 35 35" fill="none" class="opacity-8">
+        <circle cx="17.5" cy="17.5" r="17.5" fill="#fd7224" />
+      </svg>
+    </div>
+  </div>
+
+    <!-- Header -->
+  <header class="navbar fixed top-0 w-full z-50" id="navbar">
+    <nav class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <a href="home.html" class="flex items-center space-x-3" data-scroll data-scroll-speed="1">
+          <div class="relative group">
+            <svg width="50" height="50" viewBox="0 0 50 50" class="transition-transform duration-300 group-hover:scale-110">
+              <defs>
+                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#fd7224" />
+                  <stop offset="50%" style="stop-color:#ffaa5a" />
+                  <stop offset="100%" style="stop-color:#ffd25a" />
+                </linearGradient>
+              </defs>
+              <circle cx="25" cy="25" r="20" fill="url(#logoGradient)" opacity="0.2" />
+              <path d="M15 20 L25 15 L35 20 L35 30 L25 35 L15 30 Z" fill="url(#logoGradient)" />
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-white font-bold text-lg">G</span>
+            </div>
+          </div>
+          <h1 class="text-2xl font-bold gradient-text">GEMINI AGENCY</h1>
+        </a>
+
+  <!-- Desktop Navigation -->
+  <div class="hidden lg:flex items-center space-x-8">
+    <a href="home.html" class="nav-link active" data-nav="home">Home</a>
+    <a href="servizi.html" class="nav-link" data-nav="servizi">Servizi</a>
+    <a href="chi-siamo.html" class="nav-link" data-nav="chi-siamo">Chi Siamo</a>
+    <a href="contatti.html" class="nav-link" data-nav="contatti">Contatti</a>
+  </div>
+
+  <!-- CTA Button -->
+  <div class="hidden lg:block">
+    <a href="tel:+393202480724" 
+      class="btn-primary text-white px-6 py-3 rounded-full font-semibold text-sm inline-block text-center"
+      aria-label="Chiama +39 320 248 0724">
+      Chiamaci Subito!
+    </a>
+  </div>
+
+  <!-- Mobile Menu Button -->
+  <div class="lg:hidden">
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white shadow-2xl lg:hidden" id="mobileMenu">
+  <div class="p-6">
+    <div class="flex justify-between items-center mb-8">
+      <h3 class="text-xl font-bold gradient-text">Menu</h3>
+      <button class="text-gray-500 hover:text-gemini-orange" id="closeMobile">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+        </button>
+    </div>
+    
+    <nav class="space-y-6">
+      <a href="home.html" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Home</a>
+      <a href="servizi.html" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Servizi</a>
+      <a href="chi-siamo.html" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Chi Siamo</a>
+      <a href="contatti.html" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Contatti</a>
+      <a href="tel:+393202480724">
+        <button class="btn-primary text-white px-8 py-3 rounded-full font-semibold w-full mt-8">Chiamaci Subito!</button>
+      </a>
+    </nav>
+    </div>
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 px-6">
+    <div class="container mx-auto text-center">
+      <div class="animate-fade-in-up">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          I Nostri <span class="gradient-text">Servizi</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+          Soluzioni digitali complete per far crescere il tuo business online. Dalla progettazione alla realizzazione, ti accompagniamo in ogni fase del tuo successo digitale.
+        </p>
+        
+        <!-- Service Categories Tabs -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <button class="tab-button active px-6 py-3 rounded-full border-2 border-gemini-orange font-semibold" data-tab="tutti">
+            Tutti i Servizi
+          </button>
+          <button class="tab-button px-6 py-3 rounded-full border-2 border-gray-300 font-semibold" data-tab="sviluppo">
+            Sviluppo Web
+          </button>
+          <button class="tab-button px-6 py-3 rounded-full border-2 border-gray-300 font-semibold" data-tab="marketing">
+            Digital Marketing
+          </button>
+          <button class="tab-button px-6 py-3 rounded-full border-2 border-gray-300 font-semibold" data-tab="design">
+            Design & UX
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      
+      <!-- All Services Tab -->
+      <div class="tab-content active" id="tutti">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- E-commerce Development -->
+          <div class="service-card p-8 rounded-3xl shadow-lg" data-category="sviluppo">
+            <div class="service-icon w-20 h-20 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-2xl flex items-center justify-center mb-6">
+              <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+                <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">E-commerce Development</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Creiamo negozi online performanti e sicuri con sistemi di pagamento integrati, gestione inventario e dashboard amministrativa completa.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Design responsive e mobile-first
+              </li>
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Integrazione pagamenti sicuri
+              </li>
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                SEO ottimizzato per vendite
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company Website -->
+          <div class="service-card p-8 rounded-3xl shadow-lg" data-category="sviluppo">
+            <div class="service-icon w-20 h-20 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-2xl flex items-center justify-center mb-6">
+              <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Sito Web Aziendale</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Siti web professionali che rappresentano al meglio la tua azienda, ottimizzati per conversioni e posizionamento sui motori di ricerca.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Design personalizzato e moderno
+              </li>
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                CMS per gestione autonoma
+              </li>
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Ottimizzazione SEO avanzata
+              </li>
+            </ul>
+
+          </div>
+
+          <!-- Social Media Management -->
+          <div class="service-card p-8 rounded-3xl shadow-lg" data-category="marketing">
+            <div class="service-icon w-20 h-20 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-2xl flex items-center justify-center mb-6">
+              <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Social Media Management</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Gestione completa dei tuoi social media con contenuti coinvolgenti, strategia mirata e crescita organica della community.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Strategia social personalizzata
+              </li>
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Creazione contenuti originali
+              </li>
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Report mensili dettagliati
+              </li>
+            </ul>
+
+          </div>
+
+          <!-- SEO & Digital Marketing -->
+          <div class="service-card p-8 rounded-3xl shadow-lg" data-category="marketing">
+            <div class="service-icon w-20 h-20 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-2xl flex items-center justify-center mb-6">
+              <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+                <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">SEO & Digital Marketing</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Strategie SEO avanzate e campagne pubblicitarie mirate per aumentare la visibilità online e generare lead qualificati.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Audit SEO completo
+              </li>
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Campagne Google Ads
+              </li>
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Analisi competitor
+              </li>
+            </ul>
+          </div>
+
+          <!-- UX/UI Design -->
+          <div class="service-card p-8 rounded-3xl shadow-lg" data-category="design">
+            <div class="service-icon w-20 h-20 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-2xl flex items-center justify-center mb-6">
+              <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">UX/UI Design</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Design di interfacce intuitive e user experience ottimizzate per massimizzare conversioni e soddisfazione utente.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Ricerca utente e personas
+              </li>
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Wireframe e prototipi
+              </li>
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Test di usabilità
+              </li>
+            </ul>
+
+          </div>
+
+          <!-- Brand Identity -->
+          <div class="service-card p-8 rounded-3xl shadow-lg" data-category="design">
+            <div class="service-icon w-20 h-20 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-2xl flex items-center justify-center mb-6">
+              <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Brand Identity</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Creazione di identità visive complete che comunicano i valori del tuo brand e si distinguono dalla concorrenza.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Logo design e varianti
+              </li>
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Palette colori e tipografia
+              </li>
+              <li class="feature-item flex items-center text-sm text-gray-600">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Brand guidelines complete
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Web Development Tab -->
+      <div class="tab-content" id="sviluppo">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="service-card p-8 rounded-3xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-4">E-commerce Avanzato</h3>
+            <p class="text-gray-600 mb-6">Soluzioni e-commerce complete con funzionalità avanzate per massimizzare le vendite online.</p>
+
+            <button class="w-full bg-gradient-to-r from-gemini-orange to-gemini-light-orange text-white py-3 rounded-full cta-button">
+              Richiedi Preventivo
+            </button>
+          </div>
+          <div class="service-card p-8 rounded-3xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-4">Web App Personalizzate</h3>
+            <p class="text-gray-600 mb-6">Applicazioni web su misura per automatizzare i processi aziendali e migliorare l'efficienza.</p>
+
+            <button class="w-full bg-gradient-to-r from-gemini-orange to-gemini-light-orange text-white py-3 rounded-full cta-button">
+              Richiedi Preventivo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Digital Marketing Tab -->
+      <div class="tab-content" id="marketing">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="service-card p-8 rounded-3xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-4">Campagne PPC</h3>
+            <p class="text-gray-600 mb-6">Gestione professionale di campagne Google Ads e Facebook Ads per massimizzare il ROI.</p>
+
+            <button class="w-full bg-gradient-to-r from-gemini-orange to-gemini-light-orange text-white py-3 rounded-full cta-button">
+              Richiedi Preventivo
+            </button>
+          </div>
+          <div class="service-card p-8 rounded-3xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-4">Email Marketing</h3>
+            <p class="text-gray-600 mb-6">Strategie di email marketing automatizzate per nutrire i lead e fidelizzare i clienti.</p>
+
+            <button class="w-full bg-gradient-to-r from-gemini-orange to-gemini-light-orange text-white py-3 rounded-full cta-button">
+              Richiedi Preventivo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Design Tab -->
+      <div class="tab-content" id="design">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="service-card p-8 rounded-3xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-4">Redesign Completo</h3>
+            <p class="text-gray-600 mb-6">Rinnovamento completo dell'identità visiva e dell'esperienza utente del tuo sito web.</p>
+
+            <button class="w-full bg-gradient-to-r from-gemini-orange to-gemini-light-orange text-white py-3 rounded-full cta-button">
+              Richiedi Preventivo
+            </button>
+          </div>
+          <div class="service-card p-8 rounded-3xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-4">Materiale Grafico</h3>
+            <p class="text-gray-600 mb-6">Creazione di materiali grafici per stampa e digitale: brochure, flyer, banner e molto altro.</p>
+
+            <button class="w-full bg-gradient-to-r from-gemini-orange to-gemini-light-orange text-white py-3 rounded-full cta-button">
+              Richiedi Preventivo
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Il Nostro <span class="gradient-text">Processo</span></h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Un approccio strutturato e trasparente per garantire il successo del tuo progetto
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Step 1 -->
+        <div class="process-step relative text-center">
+          <div class="w-20 h-20 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-white">1</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Analisi & Strategia</h3>
+          <p class="text-gray-600">
+            Studiamo il tuo business, i competitor e definiamo la strategia migliore per raggiungere i tuoi obiettivi.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-step relative text-center">
+          <div class="w-20 h-20 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-white">2</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Design & Prototipo</h3>
+          <p class="text-gray-600">
+            Creiamo wireframe e prototipi per visualizzare il progetto prima dello sviluppo, garantendo la tua approvazione.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-step relative text-center">
+          <div class="w-20 h-20 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-white">3</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Sviluppo & Test</h3>
+          <p class="text-gray-600">
+            Sviluppiamo il progetto utilizzando le migliori tecnologie e testiamo tutto accuratamente prima del lancio.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="process-step relative text-center">
+          <div class="w-20 h-20 bg-gradient-to-r from-gemini-orange to-gemini-yellow rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-white">4</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Lancio & Supporto</h3>
+          <p class="text-gray-600">
+            Lanciamo il progetto e forniamo supporto continuo per garantire performance ottimali nel tempo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Client Logos Carousel -->
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Hanno Scelto <span class="gradient-text">Gemini</span></h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Aziende che hanno trasformato il loro business digitale con noi
+        </p>
+      </div>
+
+      <!-- Carousel Container -->
+      <div class="relative overflow-hidden">
+        <div class="carousel-track flex items-center space-x-16 animate-scroll">
+          <!-- Client Logo 1 -->
+          <div class="client-logo flex-shrink-0 w-40 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300">
+            <div class="text-2xl font-bold text-gray-700">TechCorp</div>
+          </div>
+          
+          <!-- Client Logo 2 -->
+          <div class="client-logo flex-shrink-0 w-40 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300">
+            <div class="text-2xl font-bold text-blue-600">InnovateLab</div>
+          </div>
+          
+          <!-- Client Logo 3 -->
+          <div class="client-logo flex-shrink-0 w-40 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300">
+            <div class="text-2xl font-bold text-green-600">EcoSolutions</div>
+          </div>
+          
+          <!-- Client Logo 4 -->
+          <div class="client-logo flex-shrink-0 w-40 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300">
+            <div class="text-2xl font-bold text-purple-600">DesignStudio</div>
+          </div>
+          
+          <!-- Client Logo 5 -->
+          <div class="client-logo flex-shrink-0 w-40 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300">
+            <div class="text-2xl font-bold text-red-600">MediaGroup</div>
+          </div>
+          
+          <!-- Client Logo 6 -->
+          <div class="client-logo flex-shrink-0 w-40 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300">
+            <div class="text-2xl font-bold text-orange-600">StartupHub</div>
+          </div>
+          
+          <!-- Client Logo 7 -->
+          <div class="client-logo flex-shrink-0 w-40 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300">
+            <div class="text-2xl font-bold text-indigo-600">CloudTech</div>
+          </div>
+          
+          <!-- Client Logo 8 -->
+          <div class="client-logo flex-shrink-0 w-40 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300">
+            <div class="text-2xl font-bold text-pink-600">CreativeAgency</div>
+          </div>
+
+          <!-- Duplicate logos for seamless loop -->
+          <div class="client-logo flex-shrink-0 w-40 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300">
+            <div class="text-2xl font-bold text-gray-700">TechCorp</div>
+          </div>
+          
+          <div class="client-logo flex-shrink-0 w-40 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300">
+            <div class="text-2xl font-bold text-blue-600">InnovateLab</div>
+          </div>
+          
+          <div class="client-logo flex-shrink-0 w-40 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300">
+            <div class="text-2xl font-bold text-green-600">EcoSolutions</div>
+          </div>
+          
+          <div class="client-logo flex-shrink-0 w-40 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300">
+            <div class="text-2xl font-bold text-purple-600">DesignStudio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Domande <span class="gradient-text">Frequenti</span></h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Risposte alle domande più comuni sui nostri servizi
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item bg-white rounded-2xl shadow-lg">
+          <button class="faq-trigger w-full p-6 text-left flex justify-between items-center">
+            <span class="text-lg font-semibold">Quanto tempo ci vuole per realizzare un sito web?</span>
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="transform transition-transform">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content">
+            <div class="px-6 pb-6">
+              <p class="text-gray-600">
+                I tempi di realizzazione variano in base alla complessità del progetto. Un sito web standard richiede 2-4 settimane, mentre un e-commerce complesso può richiedere 6-8 settimane. Ti forniremo sempre una timeline dettagliata prima di iniziare.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item bg-white rounded-2xl shadow-lg">
+          <button class="faq-trigger w-full p-6 text-left flex justify-between items-center">
+            <span class="text-lg font-semibold">Fornite supporto dopo il lancio del sito?</span>
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="transform transition-transform">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content">
+            <div class="px-6 pb-6">
+              <p class="text-gray-600">
+                Sì, tutti i nostri pacchetti includono un periodo di supporto gratuito. Inoltre, offriamo piani di manutenzione mensili per aggiornamenti, backup e supporto tecnico continuo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item bg-white rounded-2xl shadow-lg">
+          <button class="faq-trigger w-full p-6 text-left flex justify-between items-center">
+            <span class="text-lg font-semibold">Posso gestire autonomamente il contenuto del sito?</span>
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="transform transition-transform">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content">
+            <div class="px-6 pb-6">
+              <p class="text-gray-600">
+                Assolutamente! Tutti i nostri siti includono un CMS (Content Management System) intuitivo che ti permette di aggiornare testi, immagini e contenuti in autonomia. Forniamo anche formazione per utilizzarlo al meglio.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item bg-white rounded-2xl shadow-lg">
+          <button class="faq-trigger w-full p-6 text-left flex justify-between items-center">
+            <span class="text-lg font-semibold">I vostri siti sono ottimizzati per i motori di ricerca?</span>
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="transform transition-transform">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content">
+            <div class="px-6 pb-6">
+              <p class="text-gray-600">
+                Sì, tutti i nostri siti sono sviluppati seguendo le migliori pratiche SEO. Includiamo ottimizzazione tecnica, meta tag, struttura URL corretta e velocità di caricamento ottimizzata per garantire una buona visibilità sui motori di ricerca.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- Footer -->
+<footer id="contatti" class="bg-gray-900 text-white py-12 relative overflow-hidden" data-scroll-section>
+  <div class="absolute inset-0 opacity-10">
+    <svg width="100%" height="100%" viewBox="0 0 1000 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#fd7224"/>
+          <stop offset="100%" style="stop-color:#ffd25a"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,100 Q250,50 500,100 T1000,100 L1000,300 L0,300 Z" fill="url(#footerGrad)"/>
+    </svg>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="grid md:grid-cols-4 gap-8">
+      
+      <!-- Logo and Description -->
+      <div data-scroll data-scroll-speed="1">
+        <div class="flex items-center space-x-3 mb-4">
+          <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="footerLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#fd7224"/>
+                <stop offset="100%" style="stop-color:#ffd25a"/>
+              </linearGradient>
+            </defs>
+            <circle cx="20" cy="20" r="16" fill="url(#footerLogoGrad)"/>
+            <path d="M12 16 L20 12 L28 16 L28 24 L20 28 L12 24 Z" fill="white"/>
+          </svg>
+          <h4 class="text-xl font-bold gradient-text">Gemini Agency</h4>
+        </div>
+        <p class="text-gray-400 leading-relaxed font-medium">
+          Il tuo partner per un successo digitale garantito. Creatività che comunica.
+        </p>
+      </div>
+
+      <!-- Servizi -->
+      <div data-scroll data-scroll-speed="1" data-scroll-delay="0.1">
+        <h5 class="text-lg font-semibold mb-4 text-gemini-orange">Servizi</h5>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="servizi.html#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Marketing Digitale</a></li>
+          <li><a href="servizi.html#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Social Media</a></li>
+          <li><a href="servizi.html#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Siti web</a></li>
+          <li><a href="servizi.html#" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Advertising</a></li>
+        </ul>
+      </div>
+
+      <!-- Azienda -->
+      <div data-scroll data-scroll-speed="1" data-scroll-delay="0.2">
+        <h5 class="text-lg font-semibold mb-4 text-gemini-orange">Azienda</h5>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="chi-siamo.html" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Chi Siamo</a></li>
+          <li><a href="portfolio.html" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Portfolio</a></li>
+          <li><a href="servizi.html" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Servizi</a></li>
+          <li><a href="contattaci.html" class="hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block font-medium">Contattaci</a></li>
+        </ul>
+      </div>
+
+      <!-- Contatti -->
+      <div data-scroll data-scroll-speed="1" data-scroll-delay="0.3">
+        <h5 class="text-lg font-semibold mb-4 text-gemini-orange">Contatti</h5>
+        <ul class="space-y-3 text-gray-400">
+          <li class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8.89L4.26 10.15a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <span class="font-medium">official@geminiagency.it</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684 11.498 11.498 0 005.516 5.516 1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <span class="font-medium">+39 320 248 0724</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-gemini-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0 4.243 4.243 0 11-5.657-5.657 8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span class="font-medium">Brescia, Italia</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400" data-scroll data-scroll-speed="1">
+      <p class="font-medium">&copy; 2025 Gemini Agency | Tutti i diritti riservati.</p>
+    </div>
+  </div>
+</footer>
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-gemini-orange to-gemini-light-orange text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 opacity-0 pointer-events-none z-50">
+    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="mx-auto">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+
+  <script>
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+
+    mobileMenuBtn.addEventListener('click', function() {
+      mobileMenu.classList.add('open');
+    });
+
+    closeMenuBtn.addEventListener('click', function() {
+      mobileMenu.classList.remove('open');
+    });
+
+    // Close mobile menu when clicking on links
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Tab System
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const targetTab = this.getAttribute('data-tab');
+        
+        // Remove active class from all buttons and contents
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Show corresponding content
+        if (targetTab === 'tutti') {
+          document.getElementById('tutti').classList.add('active');
+        } else {
+          document.getElementById(targetTab).classList.add('active');
+        }
+      });
+    });
+
+    // FAQ Accordion
+    const faqTriggers = document.querySelectorAll('.faq-trigger');
+
+    faqTriggers.forEach(trigger => {
+      trigger.addEventListener('click', function() {
+        const faqItem = this.parentElement;
+        const faqContent = faqItem.querySelector('.faq-content');
+        const icon = this.querySelector('svg');
+        
+        // Close all other FAQ items
+        faqTriggers.forEach(otherTrigger => {
+          if (otherTrigger !== trigger) {
+            const otherItem = otherTrigger.parentElement;
+            const otherContent = otherItem.querySelector('.faq-content');
+            const otherIcon = otherTrigger.querySelector('svg');
+            
+            otherContent.classList.remove('open');
+            otherIcon.style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current FAQ item
+        if (faqContent.classList.contains('open')) {
+          faqContent.classList.remove('open');
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          faqContent.classList.add('open');
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        backToTopBtn.style.opacity = '1';
+        backToTopBtn.style.pointerEvents = 'auto';
+      } else {
+        backToTopBtn.style.opacity = '0';
+        backToTopBtn.style.pointerEvents = 'none';
+      }
+    });
+
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Service Card Animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+        }
+      });
+    }, observerOptions);
+
+    // Observe service cards and other elements
+    document.querySelectorAll('.service-card, .pricing-card, .process-step, .portfolio-item').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Add click effects to CTA buttons
+    document.querySelectorAll('.cta-button').forEach(button => {
+      button.addEventListener('click', function(e) {
+        // Create ripple effect
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+
+    // Add ripple effect styles
+    const style = document.createElement('style');
+    style.textContent = `
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+      }
+      
+      @keyframes ripple {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Portfolio item hover effects
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+      item.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05)';
+        this.querySelector('.portfolio-overlay').style.opacity = '1';
+      });
+      
+      item.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+        this.querySelector('.portfolio-overlay').style.opacity = '0';
+      });
+    });
+
+    // Add loading animation for service cards
+    window.addEventListener('load', function() {
+      const serviceCards = document.querySelectorAll('.service-card');
+      serviceCards.forEach((card, index) => {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    });
+
+    // Initialize service cards with loading state
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s ease';
+    });
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'966b2f3093654c4a',t:'MTc1Mzc3NzA5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
