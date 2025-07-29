@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Loader
+  // === LOADER & LOCOMOTIVE ===
   const loader = document.getElementById("loading");
   const loaderText = document.getElementById("loader-text");
   const loaderIcon = document.getElementById("loader-icon");
@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   let index = 0;
-
   const interval = setInterval(() => {
     index++;
     if (index >= loadingData.length) {
@@ -22,24 +21,21 @@ document.addEventListener("DOMContentLoaded", function () {
     loaderIcon.src = loadingData[index].icon;
   }, 650);
 
-  // Nasconde loader e inizializza Locomotive
   setTimeout(() => {
     loader.classList.add("opacity-0", "pointer-events-none", "transition-opacity", "duration-500");
     setTimeout(() => {
       loader.style.display = "none";
 
-      // Inizializzazione Locomotive Scroll SOLO dopo loader
       const scroll = new LocomotiveScroll({
         el: document.querySelector('[data-scroll-container]'),
         smooth: true
       });
 
-      setupScrollFeatures(scroll); // tutto il resto dentro qui sotto
-
+      setupScrollFeatures(scroll);
     }, 500);
   }, 2000);
 
-  // === TUTTO IL RESTO QUI DENTRO ===
+  // === FUNZIONI DOPO IL LOADER ===
   function setupScrollFeatures(scroll) {
     const navbar = document.getElementById('navbar');
     const hamburger = document.getElementById('hamburger');
@@ -48,45 +44,43 @@ document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll('.nav-link');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-    // Cambia stile navbar
-    scroll.on('scroll', (instance) => {
+    scroll.on('scroll', instance => {
       if (instance.scroll.y > 100) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
       }
+
+      // Back to top visibility
+      const backToTopBtn = document.getElementById('back-to-top');
+      if (backToTopBtn) {
+        backToTopBtn.style.opacity = instance.scroll.y > 300 ? '1' : '0';
+        backToTopBtn.style.pointerEvents = instance.scroll.y > 300 ? 'auto' : 'none';
+      }
     });
 
-    // Toggle mobile menu
-    hamburger.addEventListener('click', () => {
+    // Mobile Menu
+    hamburger?.addEventListener('click', () => {
       hamburger.classList.toggle('open');
       mobileMenu.classList.toggle('open');
       document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
     });
-
-    closeMobile.addEventListener('click', () => {
+    closeMobile?.addEventListener('click', () => {
       hamburger.classList.remove('open');
       mobileMenu.classList.remove('open');
       document.body.style.overflow = '';
     });
 
-    // Link attivo
-    function setActiveNav(target) {
-      navLinks.forEach(link => link.classList.remove('active'));
-      const activeLink = document.querySelector(`[data-nav="${target}"]`);
-      if (activeLink) activeLink.classList.add('active');
-    }
-
+    // Navigation
     function setupNavigation(links) {
       links.forEach(link => {
-        link.addEventListener('click', (e) => {
+        link.addEventListener('click', e => {
           e.preventDefault();
-          const target = link.getAttribute('href').substring(1);
-          const element = document.getElementById(target);
-          if (element) {
-            scroll.scrollTo(element);
-            setActiveNav(target);
-            if (mobileMenu.classList.contains('open')) {
+          const targetId = link.getAttribute('href')?.substring(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            scroll.scrollTo(target);
+            if (mobileMenu?.classList.contains('open')) {
               hamburger.classList.remove('open');
               mobileMenu.classList.remove('open');
               document.body.style.overflow = '';
@@ -95,39 +89,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       });
     }
-
     setupNavigation(navLinks);
     setupNavigation(mobileNavLinks);
 
-    // Contatori numerici
-    function animateCounters() {
-      const counters = document.querySelectorAll('.counter');
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const isPercentage = counter.textContent.includes('%');
-        const isPlus = counter.textContent.includes('+');
-        let current = 0;
-        const increment = target / 50;
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            let suffix = isPercentage ? '%' : (isPlus ? '+' : '');
-            counter.textContent = target + suffix;
-            clearInterval(timer);
-          } else {
-            let suffix = isPercentage ? '%' : (isPlus ? '+' : '');
-            counter.textContent = Math.ceil(current) + suffix;
-          }
-        }, 40);
-      });
-    }
-
-    // Nuova variabile per animare i contatori una volta sola
+    // Counter Animation
     let countersAnimated = false;
-
     scroll.on('scroll', () => {
       if (countersAnimated) return;
-
       const counters = document.querySelectorAll('.counter');
       for (let counter of counters) {
         const rect = counter.getBoundingClientRect();
@@ -138,16 +106,34 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     });
-
-    // Hover sulle card
-    document.querySelectorAll('.card-hover').forEach(card => {
-      card.addEventListener('mouseenter', function () {
-        this.style.transform = 'translateY(-15px) scale(1.02)';
-        this.style.boxShadow = '0 25px 50px rgba(253, 114, 36, 0.15)';
+    function animateCounters() {
+      document.querySelectorAll('.counter').forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const isPercentage = counter.textContent.includes('%');
+        const isPlus = counter.textContent.includes('+');
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target + (isPercentage ? '%' : (isPlus ? '+' : ''));
+            clearInterval(timer);
+          } else {
+            counter.textContent = Math.ceil(current) + (isPercentage ? '%' : (isPlus ? '+' : ''));
+          }
+        }, 40);
       });
-      card.addEventListener('mouseleave', function () {
-        this.style.transform = '';
-        this.style.boxShadow = '';
+    }
+
+    // Hover effects
+    document.querySelectorAll('.card-hover').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-15px) scale(1.02)';
+        card.style.boxShadow = '0 25px 50px rgba(253, 114, 36, 0.15)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+        card.style.boxShadow = '';
       });
     });
 
@@ -156,19 +142,130 @@ document.addEventListener("DOMContentLoaded", function () {
       scroll.update();
     });
   }
-});
-  document.addEventListener("DOMContentLoaded", () => {
-    const shapes = document.querySelectorAll(".floating-shapes .shape");
 
-    shapes.forEach(shape => {
-      // Posizioni casuali top e left (0% a 90% per non uscire troppo)
-      const top = Math.random() * 90; 
-      const left = Math.random() * 90; 
-      shape.style.top = `${top}%`;
-      shape.style.left = `${left}%`;
-      shape.style.right = 'auto'; // rimuovi eventuale right
+  // === ALTRE FUNZIONI STATICHE ===
 
-      // Randomizza delay animazione floating tra 0 e 4 secondi
-      shape.style.animationDelay = `${Math.random() * 4}s`;
+  // Tab system
+  document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', function () {
+      const targetTab = this.getAttribute('data-tab');
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+      this.classList.add('active');
+      document.getElementById(targetTab)?.classList.add('active');
     });
   });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', function () {
+      const faqItem = this.parentElement;
+      const faqContent = faqItem.querySelector('.faq-content');
+      const icon = this.querySelector('svg');
+
+      document.querySelectorAll('.faq-trigger').forEach(other => {
+        if (other !== trigger) {
+          const otherContent = other.parentElement.querySelector('.faq-content');
+          const otherIcon = other.querySelector('svg');
+          otherContent.classList.remove('open');
+          otherIcon.style.transform = 'rotate(0deg)';
+        }
+      });
+
+      if (faqContent.classList.contains('open')) {
+        faqContent.classList.remove('open');
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        faqContent.classList.add('open');
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+
+  // Smooth scroll (backup if Locomotive fallback)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (!href || href === "#") return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Back to top
+  const backToTopBtn = document.getElementById('back-to-top');
+  backToTopBtn?.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // CTA ripple effect
+  document.querySelectorAll('.cta-button').forEach(button => {
+    button.addEventListener('click', function (e) {
+      const ripple = document.createElement('span');
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      ripple.style.width = ripple.style.height = `${size}px`;
+      ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+      ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+      ripple.classList.add('ripple');
+      this.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
+  });
+
+  // Ripple CSS
+  const style = document.createElement('style');
+  style.textContent = `
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    }
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Portfolio item hover
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    item.addEventListener('mouseenter', function () {
+      this.style.transform = 'scale(1.05)';
+      this.querySelector('.portfolio-overlay').style.opacity = '1';
+    });
+    item.addEventListener('mouseleave', function () {
+      this.style.transform = 'scale(1)';
+      this.querySelector('.portfolio-overlay').style.opacity = '0';
+    });
+  });
+
+  // Floating shapes
+  const shapes = document.querySelectorAll(".floating-shapes .shape");
+  shapes.forEach(shape => {
+    shape.style.top = `${Math.random() * 90}%`;
+    shape.style.left = `${Math.random() * 90}%`;
+    shape.style.right = 'auto';
+    shape.style.animationDelay = `${Math.random() * 4}s`;
+  });
+
+  // Service card animation (on load)
+  const serviceCards = document.querySelectorAll('.service-card');
+  serviceCards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'all 0.6s ease';
+    setTimeout(() => {
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, index * 100);
+  });
+});
