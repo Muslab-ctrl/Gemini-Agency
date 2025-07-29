@@ -3,24 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gemini Agency - Servizi</title>
+  <title>Gamini Agency - Chi Siamo</title>
 
   <!-- style.css -->
-  <link href="../css/style.css" rel="stylesheet" />
-
+  <link href="/css/style.css" rel="stylesheet" />
+  
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
+  
   <!-- script.js -->
-  <script src="../js/script.js"></script>
-
+  <script src="/js/script.js"></script>
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- Locomotive Scroll -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css" />
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-
+  
   <!-- Tailwind Config -->
   <script>
     tailwind.config = {
@@ -36,16 +32,11 @@
           },
           animation: {
             float: 'float 6s ease-in-out infinite',
-            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'bounce-slow': 'bounce 2s infinite',
-            'spin-slow': 'spin 8s linear infinite',
             'fade-in-up': 'fadeInUp 0.8s ease-out',
             'fade-in-left': 'fadeInLeft 0.8s ease-out',
             'fade-in-right': 'fadeInRight 0.8s ease-out',
             'scale-in': 'scaleIn 0.5s ease-out',
-            slide: 'slide 20s linear infinite',
-            counter: 'counter 2s ease-out',
-            'nav-slide': 'navSlide 0.3s ease-out',
+            'counter': 'counter 2s ease-out',
           },
         },
       },
@@ -53,257 +44,746 @@
   </script>
 </head>
 
-    <!-- Desktop Navigation -->
-    <div class="hidden md:flex items-center space-x-8">
-      <a href="#home" class="nav-link text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium">Home</a>
-      <a href="#servizi" class="nav-link text-gemini-orange font-semibold">Servizi</a>
-      <a href="#portfolio" class="nav-link text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium">Portfolio</a>
-      <a href="#chi-siamo" class="nav-link text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium">Chi Siamo</a>
-      <a href="#contatti" class="nav-link text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium">Contatti</a>
-      <button class="bg-gradient-to-r from-gemini-orange to-gemini-light-orange text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 font-medium">
-        Preventivo Gratuito
-      </button>
-    </div>
-
-    <!-- Mobile Menu Button -->
-    <button class="md:hidden text-gray-700 hover:text-gemini-orange transition-colors" id="mobile-menu-btn">
-      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+<body class="bg-white text-gray-900 overflow-x-hidden font-poppins">
+  <!-- Floating Background Shapes -->
+  <div class="floating-shapes">
+    <div class="absolute animate-float" style="top: 10%; left: 10%; animation-delay: 0s;">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none" class="opacity-10">
+        <circle cx="30" cy="30" r="30" fill="#fd7224" />
       </svg>
-    </button>
+    </div>
+    <div class="absolute animate-float" style="top: 30%; right: 15%; animation-delay: 2s;">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" class="opacity-10">
+        <rect width="40" height="40" rx="8" fill="#ffaa5a" />
+      </svg>
+    </div>
+    <div class="absolute animate-float" style="bottom: 20%; left: 20%; animation-delay: 4s;">
+      <svg width="50" height="50" viewBox="0 0 50 50" fill="none" class="opacity-10">
+        <polygon points="25,5 45,40 5,40" fill="#ffd25a" />
+      </svg>
+    </div>
   </div>
+
+  <!-- Header -->
+  <header class="navbar fixed top-0 w-full z-50" id="navbar">
+    <nav class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <a href="home.html" class="flex items-center space-x-3" data-scroll data-scroll-speed="1">
+          <div class="relative group">
+            <svg width="50" height="50" viewBox="0 0 50 50" class="transition-transform duration-300 group-hover:scale-110">
+              <defs>
+                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#fd7224" />
+                  <stop offset="50%" style="stop-color:#ffaa5a" />
+                  <stop offset="100%" style="stop-color:#ffd25a" />
+                </linearGradient>
+              </defs>
+              <circle cx="25" cy="25" r="20" fill="url(#logoGradient)" opacity="0.2" />
+              <path d="M15 20 L25 15 L35 20 L35 30 L25 35 L15 30 Z" fill="url(#logoGradient)" />
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-white font-bold text-lg">G</span>
+            </div>
+          </div>
+          <h1 class="text-2xl font-bold gradient-text">GEMINI AGENCY</h1>
+        </a>
+
+  <!-- Desktop Navigation -->
+  <div class="hidden lg:flex items-center space-x-8">
+    <a href="home.html" class="nav-link active" data-nav="home">Home</a>
+    <a href="servizi.html" class="nav-link" data-nav="servizi">Servizi</a>
+    <a href="chi-siamo.html" class="nav-link" data-nav="chi-siamo">Chi Siamo</a>
+    <a href="contatti.html" class="nav-link" data-nav="contatti">Contatti</a>
+  </div>
+
+  <!-- CTA Button -->
+  <div class="hidden lg:block">
+    <a href="tel:+393202480724" 
+      class="btn-primary text-white px-6 py-3 rounded-full font-semibold text-sm inline-block text-center"
+      aria-label="Chiama +39 320 248 0724">
+      Chiamaci Subito!
+    </a>
+  </div>
+
+  <!-- Mobile Menu Button -->
+  <div class="lg:hidden">
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
 </nav>
 
 <!-- Mobile Menu -->
-<div class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white shadow-2xl z-50 p-6" id="mobile-menu">
-  <div class="flex justify-between items-center mb-8">
-    <h2 class="text-xl font-bold gradient-text">Menu</h2>
-    <button class="text-gray-700 hover:text-gemini-orange" id="close-menu-btn">
-      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
-    </button>
-  </div>
-  <nav class="space-y-6">
-    <a href="#home" class="block text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium text-lg">Home</a>
-    <a href="#servizi" class="block text-gemini-orange font-semibold text-lg">Servizi</a>
-    <a href="#portfolio" class="block text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium text-lg">Portfolio</a>
-    <a href="#chi-siamo" class="block text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium text-lg">Chi Siamo</a>
-    <a href="#contatti" class="block text-gray-700 hover:text-gemini-orange transition-colors duration-300 font-medium text-lg">Contatti</a>
-    <button class="w-full bg-gradient-to-r from-gemini-orange to-gemini-light-orange text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium mt-6">
-      Preventivo Gratuito
-    </button>
-  </nav>
-</div>
-  <div class="grid lg:grid-cols-2 gap-12 mb-20">
-    <!-- E-commerce Websites -->
-    <div class="service-card bg-white p-10 rounded-3xl shadow-xl">
-      <div class="flex items-center mb-8">
-        <div class="w-20 h-20 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-3xl flex items-center justify-center mr-6">
-          <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
-            <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
-          </svg>
-        </div>
-        <h3 class="text-3xl font-bold">E-commerce Websites</h3>
-      </div>
-      <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-        <strong>Gestiamo e realizziamo siti ecommerce per la vendita online</strong>
-      </p>
-      <p class="text-gray-600 mb-8 leading-relaxed">
-        La vendita online è oggetto di notevole interesse per molte realtà imprenditoriali. Per questo noi di GEMINI ci siamo specializzati nello studio e realizzazione di progetti e-commerce completi, prendendoci cura e seguendo passo a passo i nostri clienti.
-      </p>
-      <ul class="space-y-3 text-gray-600">
-        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Piattaforme personalizzate</li>
-        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Pagamenti sicuri integrati</li>
-        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Gestione inventario avanzata</li>
-        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Ottimizzazione per mobile</li>
-      </ul>
+<div class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white shadow-2xl lg:hidden" id="mobileMenu">
+  <div class="p-6">
+    <div class="flex justify-between items-center mb-8">
+      <h3 class="text-xl font-bold gradient-text">Menu</h3>
+      <button class="text-gray-500 hover:text-gemini-orange" id="closeMobile">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+        </button>
     </div>
-
-    <!-- Company Website -->
-    <div class="service-card bg-white p-10 rounded-3xl shadow-xl">
-      <div class="flex items-center mb-8">
-        <div class="w-20 h-20 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-3xl flex items-center justify-center mr-6">
-          <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
-            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
-          </svg>
-        </div>
-        <h3 class="text-3xl font-bold">Company Website</h3>
-      </div>
-      <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-        <strong>Realizziamo siti web aziendali con plugin catalogo prodotti</strong>
-      </p>
-      <p class="text-gray-600 mb-8 leading-relaxed">
-        Ideiamo e creiamo siti internet per aziende produttrici. Il web come strumento di promozione e di lavoro. La necessità di avere il sito aziendale sempre aggiornato con tutto il catalogo prodotti digitale consultabile in pochi click.
-      </p>
-      <ul class="space-y-3 text-gray-600">
-        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Design professionale e moderno</li>
-        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Catalogo prodotti integrato</li>
-        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> Sistema di gestione contenuti</li>
-        <li class="flex items-center"><span class="text-gemini-orange mr-3 text-xl">✓</span> SEO ottimizzato</li>
-      </ul>
+    
+    <nav class="space-y-6">
+      <a href="home.html" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Home</a>
+      <a href="servizi.html" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Servizi</a>
+      <a href="chi-siamo.html" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Chi Siamo</a>
+      <a href="contatti.html" class="block text-lg font-medium hover:text-gemini-orange transition-colors mobile-nav-link">Contatti</a>
+      <a href="tel:+393202480724">
+        <button class="btn-primary text-white px-8 py-3 rounded-full font-semibold w-full mt-8">Chiamaci Subito!</button>
+      </a>
+    </nav>
     </div>
   </div>
+</header>
 
-  <!-- Social Media Management -->
-  <div class="bg-white p-10 rounded-3xl shadow-xl mb-12">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <div class="flex items-center mb-8">
-          <div class="w-20 h-20 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-3xl flex items-center justify-center mr-6">
-            <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
-              <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 px-6">
+    <div class="container mx-auto text-center">
+      <div class="animate-fade-in-up">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          Chi <span class="gradient-text">Siamo</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+          Siamo un team di creativi e strateghi digitali che trasforma le idee in soluzioni innovative per far crescere il tuo business online.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="animate-fade-in-left">
+          <h2 class="text-4xl md:text-5xl font-bold mb-8">La Nostra <span class="gradient-text">Storia</span></h2>
+          <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+            <p>
+              <strong>Gemini Agency</strong> nasce dalla passione per il digitale e dalla volontà di aiutare le aziende a crescere online. Fondata nel 2020, la nostra agenzia è cresciuta rapidamente diventando un punto di riferimento per e-commerce e siti web aziendali.
+            </p>
+            <p>
+              Il nostro nome "Gemini" rappresenta la dualità perfetta tra creatività e strategia, design e funzionalità, innovazione e affidabilità. Crediamo che ogni progetto debba essere unico e rispecchiare l'identità del brand che rappresenta.
+            </p>
+            <p>
+              Oggi, dopo aver realizzato oltre <strong>200 progetti</strong> per clienti in tutta Italia, continuiamo a evolverci e a investire nelle migliori tecnologie per offrire soluzioni sempre all'avanguardia.
+            </p>
+          </div>
+        </div>
+        
+        <div class="animate-fade-in-right">
+          <div class="relative">
+            <div class="bg-gradient-to-r from-gemini-orange to-gemini-yellow p-8 rounded-3xl text-white">
+              <div class="grid grid-cols-2 gap-6">
+                <div class="text-center">
+                  <div class="text-4xl font-bold mb-2 stat-number" data-target="200">0</div>
+                  <p class="text-sm opacity-90">Progetti Completati</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold mb-2 stat-number" data-target="150">0</div>
+                  <p class="text-sm opacity-90">Clienti Soddisfatti</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold mb-2 stat-number" data-target="4">0</div>
+                  <p class="text-sm opacity-90">Anni di Esperienza</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold mb-2 stat-number" data-target="98">0</div>
+                  <p class="text-sm opacity-90">% Soddisfazione</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Decorative elements -->
+            <div class="absolute -top-4 -right-4 w-20 h-20 bg-gemini-light-orange rounded-full opacity-20 animate-pulse"></div>
+            <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-gemini-yellow rounded-full opacity-20 animate-pulse" style="animation-delay: 1s;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">I Nostri <span class="gradient-text">Valori</span></h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Principi che guidano ogni nostro progetto e definiscono il nostro approccio al lavoro
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="value-card p-8 rounded-2xl shadow-lg">
+          <div class="w-16 h-16 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-2xl flex items-center justify-center mb-6">
+            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
             </svg>
           </div>
-          <h3 class="text-3xl font-bold">Social Media Management</h3>
+          <h3 class="text-2xl font-bold mb-4">Eccellenza</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Puntiamo sempre alla massima qualità in ogni dettaglio, dalla progettazione alla realizzazione finale.
+          </p>
         </div>
-        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-          <strong>Amplifichiamo la tua voce online con una strategia vincente</strong>
+
+        <div class="value-card p-8 rounded-2xl shadow-lg">
+          <div class="w-16 h-16 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-2xl flex items-center justify-center mb-6">
+            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Affidabilità</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Manteniamo sempre le promesse fatte ai nostri clienti, rispettando tempi e budget concordati.
+          </p>
+        </div>
+
+        <div class="value-card p-8 rounded-2xl shadow-lg">
+          <div class="w-16 h-16 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-2xl flex items-center justify-center mb-6">
+            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+              <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zM4 3v2h16V3H4zm0 18h16v-2H4v2z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Innovazione</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Utilizziamo sempre le tecnologie più avanzate per creare soluzioni all'avanguardia.
+          </p>
+        </div>
+
+        <div class="value-card p-8 rounded-2xl shadow-lg">
+          <div class="w-16 h-16 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-2xl flex items-center justify-center mb-6">
+            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+              <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-1.1.9-2 2-2s2 .9 2 2V18h2v-4h3v4h2V9.5c0-1.1-.9-2-2-2h-3V6c0-1.1-.9-2-2-2s-2 .9-2 2v1.5H8c-1.1 0-2 .9-2 2V18h2z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Collaborazione</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Lavoriamo a stretto contatto con i nostri clienti per raggiungere insieme gli obiettivi.
+          </p>
+        </div>
+
+        <div class="value-card p-8 rounded-2xl shadow-lg">
+          <div class="w-16 h-16 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-2xl flex items-center justify-center mb-6">
+            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Trasparenza</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Comunichiamo in modo chiaro e onesto, fornendo sempre aggiornamenti sui progressi.
+          </p>
+        </div>
+
+        <div class="value-card p-8 rounded-2xl shadow-lg">
+          <div class="w-16 h-16 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-2xl flex items-center justify-center mb-6">
+            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+              <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Crescita</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Ci impegniamo costantemente per migliorare e far crescere i business dei nostri clienti.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Il Nostro <span class="gradient-text">Team</span></h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Professionisti appassionati che mettono competenza ed esperienza al servizio del tuo successo
         </p>
-        <p class="text-gray-600 mb-8 leading-relaxed">
-          La gestione dei social media è molto più che postare contenuti. È l'arte di costruire una presenza online forte e coerente, in grado di connettersi autenticamente con il tuo pubblico. Con Gemini, i tuoi social non saranno solo attivi, ma strategicamente orientati a crescere.
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Team Member 1 -->
+        <div class="team-card bg-white p-8 rounded-2xl shadow-lg text-center">
+          <div class="w-32 h-32 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-full mx-auto mb-6 flex items-center justify-center">
+            <svg width="64" height="64" fill="white" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Marco Rossi</h3>
+          <p class="text-gemini-orange font-semibold mb-4">CEO & Founder</p>
+          <p class="text-gray-600 mb-6">
+            Visionario e strategist con oltre 8 anni di esperienza nel digital marketing. Guida il team verso l'innovazione continua.
+          </p>
+          <div class="flex justify-center space-x-4">
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gemini-orange hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gemini-orange hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-card bg-white p-8 rounded-2xl shadow-lg text-center">
+          <div class="w-32 h-32 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-full mx-auto mb-6 flex items-center justify-center">
+            <svg width="64" height="64" fill="white" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Laura Bianchi</h3>
+          <p class="text-gemini-orange font-semibold mb-4">Creative Director</p>
+          <p class="text-gray-600 mb-6">
+            Designer esperta con un occhio per i dettagli. Trasforma le idee in esperienze visive memorabili e funzionali.
+          </p>
+          <div class="flex justify-center space-x-4">
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gemini-orange hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gemini-orange hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-card bg-white p-8 rounded-2xl shadow-lg text-center">
+          <div class="w-32 h-32 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-full mx-auto mb-6 flex items-center justify-center">
+            <svg width="64" height="64" fill="white" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Alessandro Verdi</h3>
+          <p class="text-gemini-orange font-semibold mb-4">Lead Developer</p>
+          <p class="text-gray-600 mb-6">
+            Sviluppatore full-stack con passione per le tecnologie innovative. Trasforma i design in codice performante.
+          </p>
+          <div class="flex justify-center space-x-4">
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gemini-orange hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gemini-orange hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-card bg-white p-8 rounded-2xl shadow-lg text-center">
+          <div class="w-32 h-32 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-full mx-auto mb-6 flex items-center justify-center">
+            <svg width="64" height="64" fill="white" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Sofia Neri</h3>
+          <p class="text-gemini-orange font-semibold mb-4">Marketing Specialist</p>
+          <p class="text-gray-600 mb-6">
+            Esperta in digital marketing e social media. Crea strategie vincenti per far crescere la presenza online dei clienti.
+          </p>
+          <div class="flex justify-center space-x-4">
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gemini-orange hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gemini-orange hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Team Member 5 -->
+        <div class="team-card bg-white p-8 rounded-2xl shadow-lg text-center">
+          <div class="w-32 h-32 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-full mx-auto mb-6 flex items-center justify-center">
+            <svg width="64" height="64" fill="white" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Davide Gialli</h3>
+          <p class="text-gemini-orange font-semibold mb-4">Project Manager</p>
+          <p class="text-gray-600 mb-6">
+            Coordina tutti i progetti assicurando qualità, tempi e budget. Il punto di riferimento per i clienti durante tutto il processo.
+          </p>
+          <div class="flex justify-center space-x-4">
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gemini-orange hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gemini-orange hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Team Member 6 -->
+        <div class="team-card bg-white p-8 rounded-2xl shadow-lg text-center">
+          <div class="w-32 h-32 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-full mx-auto mb-6 flex items-center justify-center">
+            <svg width="64" height="64" fill="white" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Chiara Blu</h3>
+          <p class="text-gemini-orange font-semibold mb-4">UX/UI Designer</p>
+          <p class="text-gray-600 mb-6">
+            Specialista nell'esperienza utente. Progetta interfacce intuitive che convertono visitatori in clienti soddisfatti.
+          </p>
+          <div class="flex justify-center space-x-4">
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gemini-orange hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gemini-orange hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">La Nostra <span class="gradient-text">Timeline</span></h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          I momenti chiave che hanno segnato la crescita di Gemini Agency
         </p>
       </div>
-      <div class="grid grid-cols-2 gap-6">
-        <div class="text-center p-6 bg-gray-50 rounded-2xl">
-          <div class="text-3xl font-bold gradient-text mb-2">100+</div>
-          <p class="text-gray-600">Campagne Gestite</p>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-12">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item flex items-center">
+            <div class="hidden md:flex w-1/2 justify-end pr-8">
+              <div class="text-right">
+                <h3 class="text-2xl font-bold mb-2">2020 - Fondazione</h3>
+                <p class="text-gray-600">
+                  Nasce Gemini Agency con la missione di aiutare le aziende a crescere online attraverso soluzioni digitali innovative.
+                </p>
+              </div>
+            </div>
+            <div class="w-16 h-16 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-full flex items-center justify-center flex-shrink-0 z-10">
+              <span class="text-white font-bold">2020</span>
+            </div>
+            <div class="md:hidden ml-6">
+              <h3 class="text-2xl font-bold mb-2">2020 - Fondazione</h3>
+              <p class="text-gray-600">
+                Nasce Gemini Agency con la missione di aiutare le aziende a crescere online attraverso soluzioni digitali innovative.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item flex items-center">
+            <div class="hidden md:block w-1/2"></div>
+            <div class="w-16 h-16 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-full flex items-center justify-center flex-shrink-0 z-10">
+              <span class="text-white font-bold">2021</span>
+            </div>
+            <div class="ml-6 md:ml-8 md:w-1/2">
+              <h3 class="text-2xl font-bold mb-2">2021 - Primi Successi</h3>
+              <p class="text-gray-600">
+                Raggiungiamo i primi 50 clienti e lanciamo il nostro servizio di social media management, espandendo la nostra offerta.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item flex items-center">
+            <div class="hidden md:flex w-1/2 justify-end pr-8">
+              <div class="text-right">
+                <h3 class="text-2xl font-bold mb-2">2022 - Crescita del Team</h3>
+                <p class="text-gray-600">
+                  Il team si espande con nuovi talenti specializzati in UX/UI design e sviluppo, permettendoci di offrire servizi ancora più completi.
+                </p>
+              </div>
+            </div>
+            <div class="w-16 h-16 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-full flex items-center justify-center flex-shrink-0 z-10">
+              <span class="text-white font-bold">2022</span>
+            </div>
+            <div class="md:hidden ml-6">
+              <h3 class="text-2xl font-bold mb-2">2022 - Crescita del Team</h3>
+              <p class="text-gray-600">
+                Il team si espande con nuovi talenti specializzati in UX/UI design e sviluppo, permettendoci di offrire servizi ancora più completi.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="timeline-item flex items-center">
+            <div class="hidden md:block w-1/2"></div>
+            <div class="w-16 h-16 bg-gradient-to-r from-gemini-orange to-gemini-yellow rounded-full flex items-center justify-center flex-shrink-0 z-10">
+              <span class="text-white font-bold">2023</span>
+            </div>
+            <div class="ml-6 md:ml-8 md:w-1/2">
+              <h3 class="text-2xl font-bold mb-2">2023 - Innovazione</h3>
+              <p class="text-gray-600">
+                Introduciamo servizi di CRO e marketing automation, raggiungendo oltre 150 clienti soddisfatti in tutta Italia.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 5 -->
+          <div class="timeline-item flex items-center">
+            <div class="hidden md:flex w-1/2 justify-end pr-8">
+              <div class="text-right">
+                <h3 class="text-2xl font-bold mb-2">2024 - Il Futuro</h3>
+                <p class="text-gray-600">
+                  Continuiamo a crescere e innovare, con nuovi progetti ambiziosi e l'obiettivo di diventare leader nel settore digital.
+                </p>
+              </div>
+            </div>
+            <div class="w-16 h-16 bg-gradient-to-r from-gemini-light-orange to-gemini-orange rounded-full flex items-center justify-center flex-shrink-0 z-10">
+              <span class="text-white font-bold">2024</span>
+            </div>
+            <div class="md:hidden ml-6">
+              <h3 class="text-2xl font-bold mb-2">2024 - Il Futuro</h3>
+              <p class="text-gray-600">
+                Continuiamo a crescere e innovare, con nuovi progetti ambiziosi e l'obiettivo di diventare leader nel settore digital.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="text-center p-6 bg-gray-50 rounded-2xl">
-          <div class="text-3xl font-bold gradient-text mb-2">500%</div>
-          <p class="text-gray-600">Crescita Media</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 text-center">
+      <div class="bg-gradient-to-r from-gemini-orange to-gemini-yellow rounded-3xl p-12 text-white">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Vuoi Unirti al Nostro Team?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Siamo sempre alla ricerca di talenti creativi e appassionati. Scopri le opportunità di carriera in Gemini Agency.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button class="bg-white text-gemini-orange px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            Candidati Ora
+          </button>
+          <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-gemini-orange transition-all duration-300">
+            Scopri le Posizioni
+          </button>
         </div>
-        <div class="text-center p-6 bg-gray-50 rounded-2xl">
-          <div class="text-3xl font-bold gradient-text mb-2">24/7</div>
-          <p class="text-gray-600">Monitoraggio</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Company Info -->
+        <div class="md:col-span-2">
+          <div class="flex items-center space-x-3 mb-6">
+            <svg width="50" height="50" viewBox="0 0 50 50">
+              <defs>
+                <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#fd7224" />
+                  <stop offset="50%" style="stop-color:#ffaa5a" />
+                  <stop offset="100%" style="stop-color:#ffd25a" />
+                </linearGradient>
+              </defs>
+              <circle cx="25" cy="25" r="20" fill="url(#footerLogoGradient)" />
+              <text x="25" y="32" text-anchor="middle" fill="white" font-size="18" font-weight="bold">G</text>
+            </svg>
+            <div>
+              <h3 class="text-2xl font-bold gradient-text">Gemini Agency</h3>
+              <p class="text-gray-400">Digital Solutions</p>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-6 max-w-md">
+            Trasformiamo le tue idee in soluzioni digitali innovative che fanno crescere il tuo business.
+          </p>
         </div>
-        <div class="text-center p-6 bg-gray-50 rounded-2xl">
-          <div class="text-3xl font-bold gradient-text mb-2">50+</div>
-          <p class="text-gray-600">Brand Seguiti</p>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-xl font-bold mb-6">Link Rapidi</h4>
+          <ul class="space-y-3">
+            <li><a href="#home" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Home</a></li>
+            <li><a href="#servizi" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Servizi</a></li>
+            <li><a href="#portfolio" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Portfolio</a></li>
+            <li><a href="#chi-siamo" class="text-gemini-orange">Chi Siamo</a></li>
+            <li><a href="#contatti" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Contatti</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="text-xl font-bold mb-6">Servizi</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">E-commerce</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Company Website</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Social Media</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Marketing</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <!-- Campagne Marketing -->
-    <div class="service-card bg-white p-8 rounded-2xl shadow-lg">
-      <div class="w-16 h-16 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-2xl flex items-center justify-center mb-6">
-        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
-          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-        </svg>
-      </div>
-      <h3 class="text-2xl font-bold mb-4">Campagne Marketing</h3>
-      <p class="text-lg font-semibold text-gray-700 mb-4">Una Pubblicità potente e degna della tua immagine</p>
-      <p class="text-gray-600 mb-6">
-        Dalla scelta del format alla gestione, fino alla misurazione e all'analisi delle statistiche, ideiamo e creiamo le campagne digitali dei nostri clienti con l'obiettivo di aumentare il loro business.
-      </p>
-      <ul class="space-y-2 text-gray-600">
-        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Google Ads & Facebook Ads</li>
-        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Analisi e ottimizzazione</li>
-        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Report dettagliati</li>
-      </ul>
-    </div>
 
-    <!-- Graphic Design -->
-    <div class="service-card bg-white p-8 rounded-2xl shadow-lg">
-      <div class="w-16 h-16 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-2xl flex items-center justify-center mb-6">
-        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-        </svg>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+        <p class="text-gray-400">
+          © 2024 Gemini Agency. Tutti i diritti riservati.
+        </p>
       </div>
-      <h3 class="text-2xl font-bold mb-4">Graphic Design</h3>
-      <p class="text-lg font-semibold text-gray-700 mb-4">Dai vita al tuo brand con un'identità visiva unica</p>
-      <p class="text-gray-600 mb-6">
-        Creiamo identità visive che rispecchiano l'essenza del tuo brand, dalla progettazione di loghi e materiali promozionali fino alla realizzazione di contenuti grafici per i social media.
-      </p>
-      <ul class="space-y-2 text-gray-600">
-        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Logo e Brand Identity</li>
-        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Materiali promozionali</li>
-        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Contenuti per social media</li>
-      </ul>
     </div>
+  </footer>
 
-    <!-- CRO -->
-    <div class="service-card bg-white p-8 rounded-2xl shadow-lg md:col-span-2 lg:col-span-1">
-      <div class="w-16 h-16 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-2xl flex items-center justify-center mb-6">
-        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
-          <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
-        </svg>
-      </div>
-      <h3 class="text-2xl font-bold mb-4">Conversion Rate Optimization</h3>
-      <p class="text-lg font-semibold text-gray-700 mb-4">Massimizza il valore di ogni visita al tuo sito</p>
-      <p class="text-gray-600 mb-6">
-        Avere traffico sul tuo sito web è solo il primo passo; il vero successo arriva quando quei visitatori si trasformano in clienti. Con il nostro servizio di CRO, analizziamo il comportamento degli utenti e implementiamo strategie mirate per ottimizzare il tasso di conversione.
-      </p>
-      <ul class="space-y-2 text-gray-600">
-        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Analisi comportamento utenti</li>
-        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> A/B Testing</li>
-        <li class="flex items-center"><span class="text-gemini-orange mr-2">✓</span> Ottimizzazione conversioni</li>
-      </ul>
-    </div>
-  </div>
-</div>
-  <div class="grid md:grid-cols-4 gap-8">
-    <div class="process-step text-center">
-      <div class="w-20 h-20 bg-gradient-to-r from-gemini-orange to-gemini-light-orange rounded-full flex items-center justify-center mx-auto mb-6">
-        <span class="text-white font-bold text-2xl">1</span>
-      </div>
-      <h3 class="text-xl font-bold mb-4">Analisi</h3>
-      <p class="text-gray-600">Studiamo il tuo business e i tuoi obiettivi per creare la strategia perfetta</p>
-    </div>
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-gemini-orange to-gemini-light-orange text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 opacity-0 pointer-events-none z-50">
+    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="mx-auto">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
 
-    <div class="process-step text-center">
-      <div class="w-20 h-20 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-full flex items-center justify-center mx-auto mb-6">
-        <span class="text-white font-bold text-2xl">2</span>
-      </div>
-      <h3 class="text-xl font-bold mb-4">Progettazione</h3>
-      <p class="text-gray-600">Creiamo wireframe e mockup per visualizzare la soluzione ideale</p>
-    </div>
+  <script>
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
 
-    <div class="process-step text-center">
-      <div class="w-20 h-20 bg-gradient-to-r from-gemini-yellow to-gemini-orange rounded-full flex items-center justify-center mx-auto mb-6">
-        <span class="text-white font-bold text-2xl">3</span>
-      </div>
-      <h3 class="text-xl font-bold mb-4">Sviluppo</h3>
-      <p class="text-gray-600">Realizziamo il progetto con le migliori tecnologie e standard qualitativi</p>
-    </div>
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
 
-    <div class="process-step text-center">
-      <div class="w-20 h-20 bg-gradient-to-r from-gemini-orange to-gemini-yellow rounded-full flex items-center justify-center mx-auto mb-6">
-        <span class="text-white font-bold text-2xl">4</span>
-      </div>
-      <h3 class="text-xl font-bold mb-4">Lancio & Supporto</h3>
-      <p class="text-gray-600">Lanciamo il progetto e ti supportiamo con manutenzione e aggiornamenti</p>
-    </div>
-  </div>
-</div>
-    <!-- Quick Links -->
-    <div>
-      <h4 class="text-xl font-bold mb-6">Link Rapidi</h4>
-      <ul class="space-y-3">
-        <li><a href="#home" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Home</a></li>
-        <li><a href="#servizi" class="text-gemini-orange">Servizi</a></li>
-        <li><a href="#portfolio" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Portfolio</a></li>
-        <li><a href="#contatti" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Contatti</a></li>
-      </ul>
-    </div>
+    mobileMenuBtn.addEventListener('click', function() {
+      mobileMenu.classList.add('open');
+    });
 
-    <!-- Services -->
-    <div>
-      <h4 class="text-xl font-bold mb-6">Servizi</h4>
-      <ul class="space-y-3">
-        <li><a href="#" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">E-commerce</a></li>
-        <li><a href="#" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Company Website</a></li>
-        <li><a href="#" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Social Media</a></li>
-        <li><a href="#" class="text-gray-400 hover:text-gemini-orange transition-colors duration-300">Marketing</a></li>
-      </ul>
-    </div>
-  </div>
+    closeMenuBtn.addEventListener('click', function() {
+      mobileMenu.classList.remove('open');
+    });
 
-  <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-    <p class="text-gray-400">
-      © 2024 Gemini Agency. Tutti i diritti riservati.
-    </p>
-  </div>
-</div>
+    // Close mobile menu when clicking on links
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        backToTopBtn.style.opacity = '1';
+        backToTopBtn.style.pointerEvents = 'auto';
+      } else {
+        backToTopBtn.style.opacity = '0';
+        backToTopBtn.style.pointerEvents = 'none';
+      }
+    });
+
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Add hover effects to team cards
+    document.querySelectorAll('.team-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+      });
+    });
+
+    // Counter Animation
+    function animateCounter(element, target) {
+      let current = 0;
+      const increment = target / 100;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        element.textContent = Math.floor(current);
+      }, 20);
+    }
+
+    // Intersection Observer for animations and counters
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+          
+          // Animate counters
+          if (entry.target.classList.contains('stat-number')) {
+            const target = parseInt(entry.target.getAttribute('data-target'));
+            animateCounter(entry.target, target);
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.team-card, .value-card, .timeline-item, .stat-number').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Add click effects to social media links
+    document.querySelectorAll('a[href="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1.1)';
+          setTimeout(() => {
+            this.style.transform = 'scale(1)';
+          }, 150);
+        }, 100);
+      });
+    });
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'966af9ace427ee9f',t:'MTc1Mzc3NDkwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
