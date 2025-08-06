@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
         smooth: true
       });
 
+      scroll.update();
+
       setupScrollFeatures(scroll);
     }, 500);
   }, 2000);
