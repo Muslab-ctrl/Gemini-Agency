@@ -145,55 +145,58 @@
 
   <!-- Video Background -->
   <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-    <source src="/assets/video-background.mp4" type="video/mp4">
+    <source src="../assets/video-background.mp4" type="video/mp4">
     Il tuo browser non supporta il video in background.
   </video>
 
-  <!-- Overlay (optional) -->
-  <div class="absolute inset-0 bg-black/30 z-0"></div>
+  <!-- Overlay Scuro per Contrasto -->
+  <div class="absolute inset-0 bg-black/50 z-0"></div>
 
-  <!-- Hero Content -->
+  <!-- Contenuto Hero -->
   <div class="container mx-auto px-6 text-center relative z-10">
     <div data-scroll data-scroll-speed="2" data-scroll-delay="0.1">
 
-      <!-- Titolo principale -->
-      <h2 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+      <!-- Titolo Principale -->
+      <h2 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
         <span class="animated-gradient-text block">GEMINI AGENCY</span>
       </h2>
 
       <!-- Sottotitolo -->
-      <p class="text-xl md:text-2xl text-gray-100 mb-8 max-w-4xl mx-auto font-medium" data-scroll data-scroll-speed="1">
+      <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto font-medium" data-scroll data-scroll-speed="1">
         L'agenzia che accelera la tua ascesa online.<br>
         Con un mix esplosivo di creatività e strategia, siamo pronti a portare il tuo brand al livello successivo.
       </p>
 
-      <!-- Pulsanti -->
+      <!-- Pulsanti CTA -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center" data-scroll data-scroll-speed="1" data-scroll-delay="0.3">
+        
         <a href="#contatti">
-        <button class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold">
-          <span class="flex items-center justify-center space-x-2">
-            <span>Inizia il tuo progetto</span>
-            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </span>
-        </button>
+          <button class="bg-[#FD7224] hover:bg-[#E95F12] text-white px-8 py-4 rounded-full text-lg font-semibold transition duration-300 shadow-lg">
+            <span class="flex items-center justify-center space-x-2">
+              <span>Inizia il tuo progetto</span>
+              <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </span>
+          </button>
         </a>
 
         <a href="servizi.html">
-        <button class="group border-2 border-gemini-orange text-gemini-orange hover:bg-gemini-orange hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-          <span class="flex items-center justify-center space-x-2">
-            <svg class="w-5 h-5 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <span>Scopri di più</span>
-          </span>
-        </button>
+          <button class="border-2 border-[#FD7224] text-[#FD7224] hover:bg-[#FD7224] hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            <span class="flex items-center justify-center space-x-2">
+              <svg class="w-5 h-5 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>Scopri di più</span>
+            </span>
+          </button>
         </a>
+
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- Statistics Section -->
 <section class="py-20 bg-gradient-to-r from-gemini-orange to-gemini-yellow" data-scroll-section>
