@@ -17,10 +17,6 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- Locomotive Scroll -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css" />
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-
   <!-- Tailwind Config -->
   <script>
     tailwind.config = {
@@ -142,7 +138,7 @@
 
 <!-- Hero Section -->
 <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden" data-scroll-section>
-
+  
   <!-- Video Background -->
   <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
     <source src="../assets/video-background.mp4" type="video/mp4">
@@ -156,84 +152,83 @@
   <div class="container mx-auto px-6 text-center relative z-10">
     <div data-scroll data-scroll-speed="2" data-scroll-delay="0.1">
 
-      <!-- Titolo Principale -->
-      <h2 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
-        <span class="animated-gradient-text block">GEMINI AGENCY</span>
-      </h2>
+    <!-- Titolo Principale -->
+    <h2 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
+      <span class="animated-gradient-text block">GEMINI AGENCY</span>
+    </h2>
 
-      <!-- Sottotitolo -->
-      <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto font-medium" data-scroll data-scroll-speed="1">
-        L'agenzia che accelera la tua ascesa online.<br>
-        Con un mix esplosivo di creatività e strategia, siamo pronti a portare il tuo brand al livello successivo.
-      </p>
+    <!-- Sottotitolo -->
+    <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto font-medium" data-scroll data-scroll-speed="1">
+      L'agenzia che accelera la tua ascesa online.<br>
+      Con un mix esplosivo di creatività e strategia, siamo pronti a portare il tuo brand al livello successivo.
+    </p>
 
-      <!-- Pulsanti CTA -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-scroll data-scroll-speed="1" data-scroll-delay="0.3">
+    <!-- Pulsanti CTA -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center" data-scroll data-scroll-speed="1" data-scroll-delay="0.3">
         
-        <a href="#contatti">
-          <button class="bg-[#FD7224] hover:bg-[#E95F12] text-white px-8 py-4 rounded-full text-lg font-semibold transition duration-300 shadow-lg">
-            <span class="flex items-center justify-center space-x-2">
-              <span>Inizia il tuo progetto</span>
-              <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-              </svg>
-            </span>
-          </button>
-        </a>
+      <a href="#contatti">
+        <button class="bg-[#FD7224] hover:bg-[#E95F12] text-white px-8 py-4 rounded-full text-lg font-semibold transition duration-300 shadow-lg">
+          <span class="flex items-center justify-center space-x-2">
+            <span>Inizia il tuo progetto</span>
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </span>
+        </button>
+      </a>
 
-        <a href="servizi.html">
-          <button class="border-2 border-[#FD7224] text-[#FD7224] hover:bg-[#FD7224] hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-            <span class="flex items-center justify-center space-x-2">
-              <svg class="w-5 h-5 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <span>Scopri di più</span>
-            </span>
-          </button>
-        </a>
+      <a href="servizi.html">
+        <button class="border-2 border-[#FD7224] text-[#FD7224] hover:bg-[#FD7224] hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+          <span class="flex items-center justify-center space-x-2">
+            <svg class="w-5 h-5 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Scopri di più</span>
+          </span>
+        </button>
+      </a>
 
-      </div>
     </div>
   </div>
+</div>
 </section>
 
+    <!-- Statistics Section -->
+    <section class="py-20 bg-gradient-to-r from-gemini-orange to-gemini-yellow" data-scroll-section>
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12" data-scroll data-scroll-speed="1">
+          <h3 class="text-3xl font-bold text-white mb-4">
+            Perché è fondamentale avere una strategia di vendita online?
+          </h3>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 card-hover" data-scroll data-scroll-speed="2">
+            <div class="text-6xl font-bold text-white mb-4 counter" data-target="64">64%</div>
+            <div class="text-xl font-semibold text-white mb-2">Vendite Online</div>
+            <div class="text-white/80">Acquisti con interazione online</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 card-hover" data-scroll data-scroll-speed="2" data-scroll-delay="0.1">
+            <div class="text-6xl font-bold text-white mb-4 counter" data-target="79">79%</div>
+            <div class="text-xl font-semibold text-white mb-2">Mobile</div>
+            <div class="text-white/80">Vendite e-commerce da dispositivi mobili</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 card-hover" data-scroll data-scroll-speed="2" data-scroll-delay="0.2">
+            <div class="text-6xl font-bold text-white mb-4 counter" data-target="61">61%</div>
+            <div class="text-xl font-semibold text-white mb-2">Frequenza</div>
+            <div class="text-white/80">Di acquisti ricorrenti</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- Statistics Section -->
-<section class="py-20 bg-gradient-to-r from-gemini-orange to-gemini-yellow" data-scroll-section>
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-12" data-scroll data-scroll-speed="1">
-      <h3 class="text-3xl font-bold text-white mb-4">
-        Perché è fondamentale avere una strategia di vendita online?
-      </h3>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8 text-center">
-      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 card-hover" data-scroll data-scroll-speed="2">
-        <div class="text-6xl font-bold text-white mb-4 counter" data-target="64">64%</div>
-        <div class="text-xl font-semibold text-white mb-2">Vendite Online</div>
-        <div class="text-white/80">Acquisti con interazione online</div>
+  <!-- Servizi Section -->
+  <section id="servizi" class="py-20 bg-white relative" data-scroll-section>
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16" data-scroll data-scroll-speed="1">
+        <h3 class="text-4xl md:text-5xl font-bold mb-4">
+          I NOSTRI <span class="gradient-text">SERVIZI</span>
+        </h3>
       </div>
-      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 card-hover" data-scroll data-scroll-speed="2" data-scroll-delay="0.1">
-        <div class="text-6xl font-bold text-white mb-4 counter" data-target="79">79%</div>
-        <div class="text-xl font-semibold text-white mb-2">Mobile</div>
-        <div class="text-white/80">Vendite e-commerce da dispositivi mobili</div>
-      </div>
-      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 card-hover" data-scroll data-scroll-speed="2" data-scroll-delay="0.2">
-        <div class="text-6xl font-bold text-white mb-4 counter" data-target="61">61%</div>
-        <div class="text-xl font-semibold text-white mb-2">Frequenza</div>
-        <div class="text-white/80">Di acquisti ricorrenti</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Servizi Section -->
-<section id="servizi" class="py-20 bg-white relative" data-scroll-section>
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16" data-scroll data-scroll-speed="1">
-      <h3 class="text-4xl md:text-5xl font-bold mb-4">
-        I NOSTRI <span class="gradient-text">SERVIZI</span>
-      </h3>
-    </div>
 
     <!-- Marketing Profittevole -->
     <div class="mb-20">
@@ -295,8 +290,10 @@
       </h3>
     </div>
     <div class="grid md:grid-cols-3 gap-8 mb-16">
+      
+      <!-- Brand Awareness -->
       <div class="text-center bg-white bg-opacity-10 p-8 rounded-2xl shadow-lg card-hover" data-scroll data-scroll-speed="2">
-        <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div class="w-20 h-20 bg-gradient-to-r from-yellow-100 to-yellow-50 rounded-full flex items-center justify-center mx-auto mb-4">
           <svg aria-hidden="true" class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 3v10a2 2 0 002 2h6a2 2 0 002-2V7H7z"></path>
           </svg>
@@ -304,8 +301,10 @@
         <h5 class="text-xl font-bold mb-2 text-white">Brand Awareness</h5>
         <p class="text-white font-medium">Aumenta la riconoscibilità del tuo brand attraverso strategie di comunicazione efficaci.</p>
       </div>
+      
+      <!-- Lead Generation -->
       <div class="text-center bg-white bg-opacity-10 p-8 rounded-2xl shadow-lg card-hover" data-scroll data-scroll-speed="2" data-scroll-delay="0.1">
-        <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-teal-400 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div class="w-20 h-20 bg-gradient-to-r from-yellow-100 to-yellow-50 rounded-full flex items-center justify-center mx-auto mb-4">
           <svg aria-hidden="true" class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18"></path>
           </svg>
@@ -313,8 +312,10 @@
         <h5 class="text-xl font-bold mb-2 text-white">Lead Generation</h5>
         <p class="text-white font-medium">Genera contatti qualificati e trasforma gli utenti in potenziali clienti.</p>
       </div>
+      
+      <!-- Vendite Online -->
       <div class="text-center bg-white bg-opacity-10 p-8 rounded-2xl shadow-lg card-hover" data-scroll data-scroll-speed="2" data-scroll-delay="0.2">
-        <div class="w-20 h-20 bg-gradient-to-r from-red-500 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div class="w-20 h-20 bg-gradient-to-r from-yellow-100 to-yellow-50 rounded-full flex items-center justify-center mx-auto mb-4">
           <svg aria-hidden="true" class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m4-4H8"></path>
           </svg>
@@ -322,6 +323,7 @@
         <h5 class="text-xl font-bold mb-2 text-white">Vendite Online</h5>
         <p class="text-white font-medium">Ottimizza il tuo e-commerce per incrementare le vendite e il fatturato.</p>
       </div>
+      
     </div>
   </div>
 </section>
