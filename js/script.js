@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // === LOADER & LOCOMOTIVE ===
+  // === LOADER ===
   const loader = document.getElementById("loading");
   const loaderText = document.getElementById("loader-text");
   const loaderIcon = document.getElementById("loader-icon");
@@ -25,127 +25,109 @@ document.addEventListener("DOMContentLoaded", function () {
     loader.classList.add("opacity-0", "pointer-events-none", "transition-opacity", "duration-500");
     setTimeout(() => {
       loader.style.display = "none";
-
-      const scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true
-      });
-
-      scroll.update();
-
-      setupScrollFeatures(scroll);
     }, 500);
   }, 2000);
 
-  // === FUNZIONI DOPO IL LOADER ===
-  function setupScrollFeatures(scroll) {
-    const navbar = document.getElementById('navbar');
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeMobile = document.getElementById('closeMobile');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  // === NAVBAR & MOBILE MENU ===
+  const navbar = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMobile = document.getElementById('closeMobile');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-    scroll.on('scroll', instance => {
-      if (instance.scroll.y > 100) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-
-      // Back to top visibility
-      const backToTopBtn = document.getElementById('back-to-top');
-      if (backToTopBtn) {
-        backToTopBtn.style.opacity = instance.scroll.y > 300 ? '1' : '0';
-        backToTopBtn.style.pointerEvents = instance.scroll.y > 300 ? 'auto' : 'none';
-      }
-    });
-
-    // Mobile Menu
-    hamburger?.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-    });
-    closeMobile?.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-
-    // Navigation
-    function setupNavigation(links) {
-      links.forEach(link => {
-        link.addEventListener('click', e => {
-          e.preventDefault();
-          const targetId = link.getAttribute('href')?.substring(1);
-          const target = document.getElementById(targetId);
-          if (target) {
-            scroll.scrollTo(target);
-            if (mobileMenu?.classList.contains('open')) {
-              hamburger.classList.remove('open');
-              mobileMenu.classList.remove('open');
-              document.body.style.overflow = '';
-            }
-          }
-        });
-      });
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
-    setupNavigation(navLinks);
-    setupNavigation(mobileNavLinks);
 
-    // Counter Animation
-    let countersAnimated = false;
-    scroll.on('scroll', () => {
-      if (countersAnimated) return;
-      const counters = document.querySelectorAll('.counter');
-      for (let counter of counters) {
-        const rect = counter.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          countersAnimated = true;
-          animateCounters();
-          break;
+    // Back to top visibility
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+      backToTopBtn.style.opacity = window.scrollY > 300 ? '1' : '0';
+      backToTopBtn.style.pointerEvents = window.scrollY > 300 ? 'auto' : 'none';
+    }
+  });
+
+  // Mobile Menu
+  hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  closeMobile?.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+
+  function setupNavigation(links) {
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href')?.substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (mobileMenu?.classList.contains('open')) {
+            hamburger.classList.remove('open');
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+          }
         }
+      });
+    });
+  }
+  setupNavigation(navLinks);
+  setupNavigation(mobileNavLinks);
+
+  // Counter Animation
+  let countersAnimated = false;
+  window.addEventListener('scroll', () => {
+    if (countersAnimated) return;
+    const counters = document.querySelectorAll('.counter');
+    for (let counter of counters) {
+      const rect = counter.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        countersAnimated = true;
+        animateCounters();
+        break;
       }
-    });
-    function animateCounters() {
-      document.querySelectorAll('.counter').forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const isPercentage = counter.textContent.includes('%');
-        const isPlus = counter.textContent.includes('+');
-        let current = 0;
-        const increment = target / 50;
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            counter.textContent = target + (isPercentage ? '%' : (isPlus ? '+' : ''));
-            clearInterval(timer);
-          } else {
-            counter.textContent = Math.ceil(current) + (isPercentage ? '%' : (isPlus ? '+' : ''));
-          }
-        }, 40);
-      });
     }
+  });
 
-    // Hover effects
-    document.querySelectorAll('.card-hover').forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-15px) scale(1.02)';
-        card.style.boxShadow = '0 25px 50px rgba(253, 114, 36, 0.15)';
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-        card.style.boxShadow = '';
-      });
-    });
-
-    // Resize
-    window.addEventListener('resize', () => {
-      scroll.update();
+  function animateCounters() {
+    document.querySelectorAll('.counter').forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'));
+      const isPercentage = counter.textContent.includes('%');
+      const isPlus = counter.textContent.includes('+');
+      let current = 0;
+      const increment = target / 50;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          counter.textContent = target + (isPercentage ? '%' : (isPlus ? '+' : ''));
+          clearInterval(timer);
+        } else {
+          counter.textContent = Math.ceil(current) + (isPercentage ? '%' : (isPlus ? '+' : ''));
+        }
+      }, 40);
     });
   }
 
-  // === ALTRE FUNZIONI STATICHE ===
+  // Hover effects
+  document.querySelectorAll('.card-hover').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-15px) scale(1.02)';
+      card.style.boxShadow = '0 25px 50px rgba(253, 114, 36, 0.15)';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.boxShadow = '';
+    });
+  });
 
   // Tab system
   document.querySelectorAll('.tab-button').forEach(button => {
@@ -184,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Smooth scroll (backup if Locomotive fallback)
+  // Smooth scroll for anchors
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
