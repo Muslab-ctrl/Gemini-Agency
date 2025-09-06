@@ -390,26 +390,90 @@
         </div>
       </div>
 
-    <!-- Web Development Tab -->
-    <div class="tab-content" id="sviluppo">
-      <div class="grid md:grid-cols-2 gap-8">
-        
-        <div class="service-card p-8 rounded-3xl shadow-lg">
-          <h3 class="text-2xl font-bold mb-4">E-commerce Avanzato</h3>
-          <p class="text-gray-600 mb-6">
-            Soluzioni e-commerce complete con funzionalità avanzate per massimizzare le vendite online.
-          </p>
-        </div>
+<!-- Web Development Tab -->
+<div class="tab-content" id="sviluppo">
+  <div class="grid md:grid-cols-2 gap-8">
     
-        <div class="service-card p-8 rounded-3xl shadow-lg">
-          <h3 class="text-2xl font-bold mb-4">Siti Vetrina</h3>
-          <p class="text-gray-600 mb-6">
-            Realizzazione di siti vetrina moderni e ottimizzati per presentare al meglio la tua attività online.
-          </p>
-        </div>
-    
+    <!-- E-commerce Avanzato -->
+    <div class="service-card p-8 rounded-3xl shadow-lg" data-category="ecommerce">
+      <div class="service-icon w-20 h-20 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-2xl flex items-center justify-center mb-6">
+        <!-- Icona carrello -->
+        <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 
+                   2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 
+                   2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.16 
+                   14l.84-2h8.36c.75 0 1.41-.41 
+                   1.75-1.03l3.58-6.49A1 1 0 0 0 
+                   20.75 3H5.21l-.94-2H1v2h2l3.6 
+                   7.59-1.35 2.44C4.52 13.37 5.48 
+                   15 7 15h12v-2H7.42c-.14 0-.25-.11-.26-.25z"/>
+        </svg>
       </div>
+      <h3 class="text-2xl font-bold mb-4">E-commerce Avanzato</h3>
+      <p class="text-gray-600 mb-6 leading-relaxed">
+        Soluzioni e-commerce complete con funzionalità avanzate per massimizzare le vendite online.
+      </p>
+      <ul class="space-y-2 mb-6">
+        <li class="feature-item flex items-center text-sm text-gray-600">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+          Cataloghi prodotti personalizzabili
+        </li>
+        <li class="feature-item flex items-center text-sm text-gray-600">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+          Integrazione pagamenti sicuri
+        </li>
+        <li class="feature-item flex items-center text-sm text-gray-600">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+          Gestione ordini e spedizioni
+        </li>
+      </ul>
     </div>
+
+    <!-- Siti Vetrina -->
+    <div class="service-card p-8 rounded-3xl shadow-lg" data-category="vetrina">
+      <div class="service-icon w-20 h-20 bg-gradient-to-r from-gemini-light-orange to-gemini-yellow rounded-2xl flex items-center justify-center mb-6">
+        <!-- Icona monitor -->
+        <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+          <path d="M21 3H3c-1.1 0-2 .9-2 
+                   2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 
+                   0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 
+                   14H3V5h18v12z"/>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold mb-4">Siti Vetrina</h3>
+      <p class="text-gray-600 mb-6 leading-relaxed">
+        Realizzazione di siti vetrina moderni e ottimizzati per presentare al meglio la tua attività online.
+      </p>
+      <ul class="space-y-2 mb-6">
+        <li class="feature-item flex items-center text-sm text-gray-600">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+          Design moderno e responsive
+        </li>
+        <li class="feature-item flex items-center text-sm text-gray-600">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+          Ottimizzazione SEO di base
+        </li>
+        <li class="feature-item flex items-center text-sm text-gray-600">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="mr-2 text-gemini-orange">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+          Facile aggiornamento contenuti
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
       
     <!-- Digital Marketing Tab -->
     <div class="tab-content" id="marketing">
